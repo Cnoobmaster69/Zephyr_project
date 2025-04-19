@@ -1,0 +1,51 @@
+[0.015s] Invoking command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model': CMAKE_PREFIX_PATH=/home/carlos/ros2_ws/src/jaeger_model/install:/opt/ros/humble:/home/carlos/catkin_warehouse/devel:/home/carlos/ras/devel:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install /usr/bin/cmake --build /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model -- -j8 -l8
+[0.072s] [35m[1mConsolidate compiler generated dependencies of target jaeger_model[0m
+[0.101s] [ 50%] [32mBuilding CXX object CMakeFiles/jaeger_model.dir/src/hello_world.cc.o[0m
+[12.236s] [100%] [32m[1mLinking CXX shared library libjaeger_model.so[0m
+[13.154s] [100%] Built target jaeger_model
+[13.169s] Invoked command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model' returned '0': CMAKE_PREFIX_PATH=/home/carlos/ros2_ws/src/jaeger_model/install:/opt/ros/humble:/home/carlos/catkin_warehouse/devel:/home/carlos/ras/devel:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install /usr/bin/cmake --build /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model -- -j8 -l8
+[13.203s] Invoking command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model': CMAKE_PREFIX_PATH=/home/carlos/ros2_ws/src/jaeger_model/install:/opt/ros/humble:/home/carlos/catkin_warehouse/devel:/home/carlos/ras/devel:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install /usr/bin/cmake --install /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model
+[13.210s] -- Install configuration: ""
+[13.210s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//config
+[13.210s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//config/bridge_config.yaml
+[13.210s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//launch
+[13.210s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//launch/basic_jaeger.launch.py
+[13.210s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf
+[13.210s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/ensam1_tesis.SLDASM.csv
+[13.210s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/jaeger_model.urdf
+[13.210s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/jaeger_compl.urdf.xacro
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//worlds
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//worlds/empty.sdf
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust3.STL
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop1.STL
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust2.STL
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust1.STL
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust6.STL
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop3.STL
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust5.STL
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/base_link.STL
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust4.STL
+[13.211s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop2.STL
+[13.212s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop4.STL
+[13.212s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src
+[13.212s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src/hello_world.hh
+[13.212s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src/hello_world.cc
+[13.212s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/lib/libjaeger_model.so
+[13.217s] -- Set runtime path of "/home/carlos/ros2_ws/src/jaeger_model/install/lib/libjaeger_model.so" to ""
+[13.218s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/package_run_dependencies/jaeger_model
+[13.218s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/parent_prefix_path/jaeger_model
+[13.218s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/ament_prefix_path.sh
+[13.218s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/ament_prefix_path.dsv
+[13.218s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/path.sh
+[13.218s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/path.dsv
+[13.218s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.bash
+[13.218s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.sh
+[13.218s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.zsh
+[13.219s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.dsv
+[13.219s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/package.dsv
+[13.219s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/packages/jaeger_model
+[13.219s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/cmake/jaeger_modelConfig.cmake
+[13.219s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/cmake/jaeger_modelConfig-version.cmake
+[13.219s] -- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/package.xml
+[13.221s] Invoked command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model' returned '0': CMAKE_PREFIX_PATH=/home/carlos/ros2_ws/src/jaeger_model/install:/opt/ros/humble:/home/carlos/catkin_warehouse/devel:/home/carlos/ras/devel:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install /usr/bin/cmake --install /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model

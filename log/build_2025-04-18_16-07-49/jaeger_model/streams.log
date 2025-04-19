@@ -1,0 +1,290 @@
+[0.009s] Invoking command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model': CMAKE_PREFIX_PATH=/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake /home/carlos/ros2_ws/src/jaeger_model -DCMAKE_INSTALL_PREFIX=/home/carlos/ros2_ws/src/jaeger_model/install
+[0.085s] -- The C compiler identification is GNU 11.4.0
+[0.139s] -- The CXX compiler identification is GNU 11.4.0
+[0.147s] -- Detecting C compiler ABI info
+[0.201s] -- Detecting C compiler ABI info - done
+[0.209s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.212s] -- Detecting C compile features
+[0.212s] -- Detecting C compile features - done
+[0.216s] -- Detecting CXX compiler ABI info
+[0.278s] -- Detecting CXX compiler ABI info - done
+[0.285s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.285s] -- Detecting CXX compile features
+[0.286s] -- Detecting CXX compile features - done
+[0.288s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.429s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.523s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[0.569s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.575s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.584s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.600s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.626s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.702s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.706s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.799s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.830s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.873s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.883s] -- Looking for pthread.h
+[0.948s] -- Looking for pthread.h - found
+[0.948s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.009s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.011s] -- Found Threads: TRUE  
+[1.186s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.186s] -- Searching for dependencies of ignition-plugin1
+[1.187s] -- Searching for <ignition-plugin1> component [register]
+[1.190s] -- Looking for ignition-plugin1-register -- found version 1.4.0
+[1.190s] -- Searching for dependencies of ignition-plugin1-register
+[1.191s] -- Looking for ignition-plugin1 - found
+[1.191s] 
+[1.196s] -- Looking for ignition-gazebo6 -- found version 6.16.0
+[1.196s] -- Searching for dependencies of ignition-gazebo6
+[1.199s] -- Looking for sdformat12 -- found version 12.7.2
+[1.199s] -- Searching for dependencies of sdformat12
+[1.203s] -- Checking for module 'tinyxml2'
+[1.215s] --   Found tinyxml2, version 9.0.0
+[1.241s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.241s] -- Searching for dependencies of ignition-math6
+[1.244s] -- Looking for ignition-utils1 -- found version 1.5.1
+[1.245s] -- Searching for dependencies of ignition-utils1
+[1.246s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.247s] -- Searching for dependencies of ignition-plugin1
+[1.247s] -- Searching for <ignition-plugin1> component [loader]
+[1.249s] -- Looking for ignition-plugin1-loader -- found version 1.4.0
+[1.249s] -- Searching for dependencies of ignition-plugin1-loader
+[1.250s] -- Searching for <ignition-plugin1> component [register]
+[1.253s] -- Looking for ignition-transport11 -- found version 11.4.1
+[1.253s] -- Searching for dependencies of ignition-transport11
+[1.280s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[1.290s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[1.294s] -- Checking for module 'libzmq >= 4'
+[1.304s] --   Found libzmq , version 4.3.4
+[1.334s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[1.339s] -- Checking for module 'uuid'
+[1.348s] --   Found uuid, version 2.37.2
+[1.371s] -- Found UUID: TRUE  
+[1.371s] -- Looking for ignition-utils1 -- found version 1.5.1
+[1.371s] -- Searching for dependencies of ignition-utils1
+[1.371s] -- Searching for <ignition-utils1> component [cli]
+[1.374s] -- Looking for ignition-utils1-cli -- found version 1.5.1
+[1.374s] -- Searching for dependencies of ignition-utils1-cli
+[1.377s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[1.377s] -- Searching for dependencies of ignition-msgs8
+[1.393s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[1.393s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.400s] -- Searching for <ignition-transport11> component [log]
+[1.402s] -- Looking for ignition-transport11-log -- found version 11.4.1
+[1.403s] -- Searching for dependencies of ignition-transport11-log
+[1.403s] -- Searching for <ignition-transport11> component [parameters]
+[1.406s] -- Looking for ignition-transport11-parameters -- found version 11.4.1
+[1.406s] -- Searching for dependencies of ignition-transport11-parameters
+[1.407s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[1.411s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.412s] -- Searching for dependencies of ignition-common4
+[1.412s] -- Looking for dlfcn.h - found
+[1.413s] -- Looking for libdl - found
+[1.414s] -- Found DL: TRUE  
+[1.423s] -- Searching for <ignition-common4> component [profiler]
+[1.425s] -- Looking for ignition-common4-profiler -- found version 4.7.0
+[1.425s] -- Searching for dependencies of ignition-common4-profiler
+[1.426s] -- Searching for <ignition-common4> component [events]
+[1.428s] -- Looking for ignition-common4-events -- found version 4.7.0
+[1.429s] -- Searching for dependencies of ignition-common4-events
+[1.429s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.430s] -- Searching for <ignition-common4> component [av]
+[1.432s] -- Looking for ignition-common4-av -- found version 4.7.0
+[1.433s] -- Searching for dependencies of ignition-common4-av
+[1.437s] -- Checking for module 'libswscale'
+[1.446s] --   Found libswscale, version 5.9.100
+[1.470s] -- Found SWSCALE: TRUE  
+[1.474s] -- Checking for module 'libavdevice >= 56.4.100'
+[1.484s] --   Found libavdevice , version 58.13.100
+[1.512s] -- Found AVDEVICE: TRUE (Required is at least version "56.4.100") 
+[1.518s] -- Checking for module 'libavformat'
+[1.528s] --   Found libavformat, version 58.76.100
+[1.552s] -- Found AVFORMAT: TRUE  
+[1.557s] -- Checking for module 'libavcodec'
+[1.566s] --   Found libavcodec, version 58.134.100
+[1.590s] -- Found AVCODEC: TRUE  
+[1.595s] -- Checking for module 'libavutil'
+[1.604s] --   Found libavutil, version 56.70.100
+[1.631s] -- Found AVUTIL: TRUE  
+[1.636s] -- Looking for ignition-fuel_tools7 -- found version 7.3.0
+[1.637s] -- Searching for dependencies of ignition-fuel_tools7
+[1.694s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[1.702s] -- Checking for module 'jsoncpp'
+[1.713s] --   Found jsoncpp, version 1.9.5
+[1.740s] -- Found JSONCPP: TRUE  
+[1.745s] -- Checking for module 'libzip'
+[1.754s] --   Found libzip, version 1.7.3
+[1.777s] -- Found ZIP: TRUE  
+[1.777s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.777s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.778s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[1.794s] -- Looking for ignition-gui6 -- found version 6.8.0
+[1.796s] -- Searching for dependencies of ignition-gui6
+[1.838s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.839s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.839s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.839s] -- Looking for ignition-transport11 -- found version 11.4.1
+[1.842s] -- Looking for ignition-rendering6 -- found version 6.6.3
+[1.843s] -- Searching for dependencies of ignition-rendering6
+[1.843s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.843s] -- Searching for dependencies of ignition-math6
+[1.843s] -- Searching for <ignition-math6> component [eigen3]
+[1.846s] -- Looking for ignition-math6-eigen3 -- found version 6.15.1
+[1.847s] -- Searching for dependencies of ignition-math6-eigen3
+[1.855s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.855s] -- Searching for dependencies of ignition-common4
+[1.855s] -- Looking for dlfcn.h - found
+[1.855s] -- Looking for libdl - found
+[1.863s] -- Searching for <ignition-common4> component [graphics]
+[1.866s] -- Looking for ignition-common4-graphics -- found version 4.7.0
+[1.866s] -- Searching for dependencies of ignition-common4-graphics
+[1.867s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.867s] -- Looking for ignition-utils1 -- found version 1.5.1
+[1.868s] -- Searching for <ignition-common4> component [events]
+[1.868s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.869s] -- Searching for dependencies of ignition-plugin1
+[1.869s] -- Searching for <ignition-plugin1> component [all]
+[1.871s] -- Looking for all libraries of ignition-plugin1 -- found version 1.4.0
+[1.872s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.874s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[1.921s] -- Looking for ignition-physics5 -- found version 5.3.2
+[1.921s] -- Searching for dependencies of ignition-physics5
+[1.922s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.922s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[1.922s] -- Looking for ignition-utils1 -- found version 1.5.1
+[1.924s] -- Searching for <ignition-physics5> component [heightmap]
+[1.927s] -- Looking for ignition-physics5-heightmap -- found version 5.3.2
+[1.928s] -- Searching for dependencies of ignition-physics5-heightmap
+[1.928s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.929s] -- Searching for <ignition-physics5> component [mesh]
+[1.932s] -- Looking for ignition-physics5-mesh -- found version 5.3.2
+[1.932s] -- Searching for dependencies of ignition-physics5-mesh
+[1.933s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.933s] -- Searching for <ignition-physics5> component [sdf]
+[1.935s] -- Looking for ignition-physics5-sdf -- found version 5.3.2
+[1.936s] -- Searching for dependencies of ignition-physics5-sdf
+[1.936s] -- Looking for sdformat12 -- found version 12.7.2
+[1.939s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.940s] -- Searching for dependencies of ignition-sensors6
+[1.956s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[1.956s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.957s] -- Looking for ignition-common4 -- found version 4.7.0
+[1.957s] -- Looking for ignition-transport11 -- found version 11.4.1
+[1.957s] -- Looking for ignition-rendering6 -- found version 6.6.3
+[1.958s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[1.958s] -- Looking for sdformat12 -- found version 12.7.2
+[1.959s] -- Searching for <ignition-sensors6> component [air_pressure]
+[1.961s] -- Looking for ignition-sensors6-air_pressure -- found version 6.8.0
+[1.962s] -- Searching for dependencies of ignition-sensors6-air_pressure
+[1.963s] -- Searching for <ignition-sensors6> component [altimeter]
+[1.965s] -- Looking for ignition-sensors6-altimeter -- found version 6.8.0
+[1.965s] -- Searching for dependencies of ignition-sensors6-altimeter
+[1.966s] -- Searching for <ignition-sensors6> component [imu]
+[1.968s] -- Looking for ignition-sensors6-imu -- found version 6.8.0
+[1.968s] -- Searching for dependencies of ignition-sensors6-imu
+[1.969s] -- Searching for <ignition-sensors6> component [force_torque]
+[1.971s] -- Looking for ignition-sensors6-force_torque -- found version 6.8.0
+[1.972s] -- Searching for dependencies of ignition-sensors6-force_torque
+[1.972s] -- Searching for <ignition-sensors6> component [logical_camera]
+[1.974s] -- Looking for ignition-sensors6-logical_camera -- found version 6.8.0
+[1.975s] -- Searching for dependencies of ignition-sensors6-logical_camera
+[1.976s] -- Searching for <ignition-sensors6> component [magnetometer]
+[1.978s] -- Looking for ignition-sensors6-magnetometer -- found version 6.8.0
+[1.978s] -- Searching for dependencies of ignition-sensors6-magnetometer
+[1.979s] -- Searching for <ignition-sensors6> component [navsat]
+[1.981s] -- Looking for ignition-sensors6-navsat -- found version 6.8.0
+[1.981s] -- Searching for dependencies of ignition-sensors6-navsat
+[1.982s] -- Searching for <ignition-sensors6> component [rendering]
+[1.985s] -- Looking for ignition-sensors6-rendering -- found version 6.8.0
+[1.985s] -- Searching for dependencies of ignition-sensors6-rendering
+[1.986s] -- Searching for <ignition-sensors6> component [lidar]
+[1.988s] -- Looking for ignition-sensors6-lidar -- found version 6.8.0
+[1.989s] -- Searching for dependencies of ignition-sensors6-lidar
+[1.989s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.990s] -- Searching for <ignition-sensors6> component [gpu_lidar]
+[1.992s] -- Looking for ignition-sensors6-gpu_lidar -- found version 6.8.0
+[1.993s] -- Searching for dependencies of ignition-sensors6-gpu_lidar
+[1.993s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.994s] -- Searching for <ignition-sensors6> component [camera]
+[1.996s] -- Looking for ignition-sensors6-camera -- found version 6.8.0
+[1.996s] -- Searching for dependencies of ignition-sensors6-camera
+[1.997s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[1.997s] -- Searching for <ignition-sensors6> component [boundingbox_camera]
+[1.999s] -- Looking for ignition-sensors6-boundingbox_camera -- found version 6.8.0
+[2.000s] -- Searching for dependencies of ignition-sensors6-boundingbox_camera
+[2.000s] -- Searching for <ignition-sensors6> component [segmentation_camera]
+[2.003s] -- Looking for ignition-sensors6-segmentation_camera -- found version 6.8.0
+[2.003s] -- Searching for dependencies of ignition-sensors6-segmentation_camera
+[2.004s] -- Searching for <ignition-sensors6> component [depth_camera]
+[2.006s] -- Looking for ignition-sensors6-depth_camera -- found version 6.8.0
+[2.006s] -- Searching for dependencies of ignition-sensors6-depth_camera
+[2.007s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[2.007s] -- Searching for <ignition-sensors6> component [rgbd_camera]
+[2.010s] -- Looking for ignition-sensors6-rgbd_camera -- found version 6.8.0
+[2.011s] -- Searching for dependencies of ignition-sensors6-rgbd_camera
+[2.014s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[2.015s] -- Searching for <ignition-sensors6> component [thermal_camera]
+[2.016s] -- Looking for ignition-sensors6-thermal_camera -- found version 6.8.0
+[2.016s] -- Searching for dependencies of ignition-sensors6-thermal_camera
+[2.017s] -- Looking for ignition-sensors6 -- found version 6.8.0
+[2.018s] -- Looking for ignition-rendering6 -- found version 6.6.3
+[2.019s] -- Looking for ignition-math6 -- found version 6.15.1
+[2.022s] -- Looking for ignition-utils1 -- found version 1.5.1
+[2.039s] -- Looking for ignition-gazebo6 - found
+[2.039s] 
+[2.095s] -- Configuring done
+[2.105s] -- Generating done
+[2.107s] -- Build files have been written to: /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model
+[2.124s] Invoked command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake /home/carlos/ros2_ws/src/jaeger_model -DCMAKE_INSTALL_PREFIX=/home/carlos/ros2_ws/src/jaeger_model/install
+[2.125s] Invoking command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model': CMAKE_PREFIX_PATH=/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model -- -j8 -l8
+[2.172s] [ 50%] [32mBuilding CXX object CMakeFiles/jaeger_model.dir/src/hello_world.cc.o[0m
+[14.079s] [100%] [32m[1mLinking CXX shared library libjaeger_model.so[0m
+[14.840s] [100%] Built target jaeger_model
+[14.853s] Invoked command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model -- -j8 -l8
+[14.887s] Invoking command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model': CMAKE_PREFIX_PATH=/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model
+[14.893s] -- Install configuration: ""
+[14.893s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//config
+[14.893s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//config/bridge_config.yaml
+[14.893s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//launch
+[14.893s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//launch/basic_jaeger.launch.py
+[14.893s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf
+[14.893s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/ensam1_tesis.SLDASM.csv
+[14.894s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/jaeger_model.urdf
+[14.894s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/jaeger_compl.urdf.xacro
+[14.894s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//worlds
+[14.894s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//worlds/empty.sdf
+[14.894s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes
+[14.894s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust3.STL
+[14.895s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop1.STL
+[14.895s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust2.STL
+[14.895s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust1.STL
+[14.896s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust6.STL
+[14.896s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop3.STL
+[14.897s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust5.STL
+[14.897s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/base_link.STL
+[14.899s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust4.STL
+[14.900s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop2.STL
+[14.900s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop4.STL
+[14.900s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src
+[14.901s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src/hello_world.hh
+[14.901s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src/hello_world.cc
+[14.901s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/lib/libjaeger_model.so
+[14.904s] -- Set runtime path of "/home/carlos/ros2_ws/src/jaeger_model/install/lib/libjaeger_model.so" to ""
+[14.905s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/package_run_dependencies/jaeger_model
+[14.905s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/parent_prefix_path/jaeger_model
+[14.905s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/ament_prefix_path.sh
+[14.905s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/ament_prefix_path.dsv
+[14.905s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/path.sh
+[14.905s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/path.dsv
+[14.906s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.bash
+[14.906s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.sh
+[14.906s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.zsh
+[14.906s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.dsv
+[14.906s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/package.dsv
+[14.907s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/packages/jaeger_model
+[14.907s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/cmake/jaeger_modelConfig.cmake
+[14.907s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/cmake/jaeger_modelConfig-version.cmake
+[14.907s] -- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/package.xml
+[14.909s] Invoked command in '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model

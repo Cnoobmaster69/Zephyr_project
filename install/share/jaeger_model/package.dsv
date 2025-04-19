@@ -1,0 +1,11 @@
+source;share/jaeger_model/hook/cmake_prefix_path.ps1
+source;share/jaeger_model/hook/cmake_prefix_path.dsv
+source;share/jaeger_model/hook/cmake_prefix_path.sh
+source;share/jaeger_model/hook/ld_library_path_lib.ps1
+source;share/jaeger_model/hook/ld_library_path_lib.dsv
+source;share/jaeger_model/hook/ld_library_path_lib.sh
+source;share/jaeger_model/local_setup.bash
+source;share/jaeger_model/local_setup.dsv
+source;share/jaeger_model/local_setup.ps1
+source;share/jaeger_model/local_setup.sh
+source;share/jaeger_model/local_setup.zsh

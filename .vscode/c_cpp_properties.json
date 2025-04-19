@@ -1,0 +1,45 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/carlos/ros2_ws/install/transmission_interface/include/**",
+        "/home/carlos/ros2_ws/install/steering_controllers_library/include/**",
+        "/home/carlos/ros2_ws/install/controller_manager/include/**",
+        "/home/carlos/ros2_ws/install/ros2_control_test_assets/include/**",
+        "/home/carlos/ros2_ws/install/joint_state_broadcaster/include/**",
+        "/home/carlos/ros2_ws/install/imu_sensor_broadcaster/include/**",
+        "/home/carlos/ros2_ws/install/force_torque_sensor_broadcaster/include/**",
+        "/home/carlos/ros2_ws/install/realtime_tools/include/**",
+        "/home/carlos/ros2_ws/install/joint_limits/include/**",
+        "/home/carlos/ros2_ws/install/controller_interface/include/**",
+        "/home/carlos/ros2_ws/install/hardware_interface/include/**",
+        "/home/carlos/ros2_ws/install/examples_rclcpp_cbg_executor/include/**",
+        "/home/carlos/ros2_ws/install/custom_interfaces/include/**",
+        "/home/carlos/ros2_ws/install/controller_manager_msgs/include/**",
+        "/home/carlos/ros2_ws/install/control_msgs/include/**",
+        "/home/carlos/ros2_ws/src/install/unique_identifier_msgs/include/**",
+        "/home/carlos/ros2_ws/src/install/std_srvs/include/**",
+        "/home/carlos/ros2_ws/src/install/sjtu_drone_description/include/**",
+        "/home/carlos/ros2_ws/src/install/rosidl_typesupport_microxrcedds_cpp/include/**",
+        "/home/carlos/ros2_ws/src/install/rosidl_typesupport_microxrcedds_c/include/**",
+        "/home/carlos/ros2_ws/src/install/reacsa_interfaces/include/**",
+        "/home/carlos/ros2_ws/src/install/micro_ros_utilities/include/**",
+        "/home/carlos/ros2_ws/src/install/micro_ros_msgs/include/**",
+        "/home/carlos/ros2_ws/src/install/complex_msgs/include/**",
+        "/home/carlos/ros2_ws/src/install/builtin_interfaces/include/**",
+        "/opt/ros/humble/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

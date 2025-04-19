@@ -1,0 +1,191 @@
+[0.000000] (-) TimerEvent: {}
+[0.000195] (jaeger_model) JobQueued: {'identifier': 'jaeger_model', 'dependencies': OrderedDict()}
+[0.000295] (jaeger_model) JobStarted: {'identifier': 'jaeger_model'}
+[0.010929] (jaeger_model) JobProgress: {'identifier': 'jaeger_model', 'progress': 'cmake'}
+[0.012793] (jaeger_model) JobProgress: {'identifier': 'jaeger_model', 'progress': 'build'}
+[0.012924] (jaeger_model) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model', '--', '-j8', '-l8'], 'cwd': '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'carlos'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/carlos/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/carlos/ros2_ws/src/jaeger_model/install/lib:/home/carlos/catkin_warehouse/devel/lib:/home/carlos/ras/devel/lib:/home/carlos/ros2_ws/install/lib:/home/carlos/ros2_ws/src/install/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/carlos'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('OLDPWD', '/home/carlos/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.98.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/187/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/carlos/snap/code/common/.cache/immodules/immodules.cache'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/187/usr/share/code/code'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '1631'), ('BUNDLED_DEBUGPY_PATH', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/carlos/ros2_ws/src/jaeger_model/install:/home/carlos/ros2_ws/src/install:/home/carlos/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'carlos'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PKG_CONFIG_PATH', '/home/carlos/catkin_warehouse/devel/lib/pkgconfig:/home/carlos/ras/devel/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'carlos'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/carlos/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/carlos/.config/Code/User/globalStorage/github.copilot-chat/debugCommand'), ('SESSION_MANAGER', 'local/carlos-HP-EliteBook-x360-830-G6:@/tmp/.ICE-unix/1601,unix/carlos-HP-EliteBook-x360-830-G6:/tmp/.ICE-unix/1601'), ('GTK_EXE_PREFIX', '/snap/code/187/usr'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/80618b4c_fa2c_4c7f_8d96_20abd026d827'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LOCPATH', '/snap/code/187/usr/lib/locale'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-aeb8768c93c6fc02.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/carlos/snap/code/187/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.47DP52'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-cf26f789b8.sock'), ('GNOME_TERMINAL_SERVICE', ':1.103'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/carlos/snap/code/187/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/carlos/ros2_ws/src/jaeger_model/install:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('IGN_GAZEBO_SYSTEM_PLUGIN_PATH', '/home/carlos$/ros2_ws/src/jaeger_model/install/lib'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://192.168.68.104:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('IGN_GAZEBO_RESOURCE_PATH', '/home/carlos/.ignition/models'), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/carlos/snap/code/187/.local/share:/home/carlos/snap/code/187:/snap/code/187/usr/share:/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('ROS_HOSTNAME', '192.168.68.104'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/carlos/ros2_ws/src/jaeger_model/install:/opt/ros/humble:/home/carlos/catkin_warehouse/devel:/home/carlos/ras/devel:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install')]), 'shell': False}
+[0.073529] (jaeger_model) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target jaeger_model\x1b[0m\n'}
+[0.099307] (jaeger_model) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/jaeger_model.dir/src/hello_world.cc.o\x1b[0m\n'}
+[0.099508] (-) TimerEvent: {}
+[0.199756] (-) TimerEvent: {}
+[0.300013] (-) TimerEvent: {}
+[0.400337] (-) TimerEvent: {}
+[0.500624] (-) TimerEvent: {}
+[0.600942] (-) TimerEvent: {}
+[0.701366] (-) TimerEvent: {}
+[0.801754] (-) TimerEvent: {}
+[0.902137] (-) TimerEvent: {}
+[1.002486] (-) TimerEvent: {}
+[1.102769] (-) TimerEvent: {}
+[1.203059] (-) TimerEvent: {}
+[1.303439] (-) TimerEvent: {}
+[1.403711] (-) TimerEvent: {}
+[1.503998] (-) TimerEvent: {}
+[1.604250] (-) TimerEvent: {}
+[1.704534] (-) TimerEvent: {}
+[1.804815] (-) TimerEvent: {}
+[1.905099] (-) TimerEvent: {}
+[2.005380] (-) TimerEvent: {}
+[2.105689] (-) TimerEvent: {}
+[2.205991] (-) TimerEvent: {}
+[2.306239] (-) TimerEvent: {}
+[2.406545] (-) TimerEvent: {}
+[2.506901] (-) TimerEvent: {}
+[2.608600] (-) TimerEvent: {}
+[2.708901] (-) TimerEvent: {}
+[2.809187] (-) TimerEvent: {}
+[2.909495] (-) TimerEvent: {}
+[3.009793] (-) TimerEvent: {}
+[3.110091] (-) TimerEvent: {}
+[3.210374] (-) TimerEvent: {}
+[3.310662] (-) TimerEvent: {}
+[3.410963] (-) TimerEvent: {}
+[3.511280] (-) TimerEvent: {}
+[3.611559] (-) TimerEvent: {}
+[3.711846] (-) TimerEvent: {}
+[3.812145] (-) TimerEvent: {}
+[3.912463] (-) TimerEvent: {}
+[4.012829] (-) TimerEvent: {}
+[4.113143] (-) TimerEvent: {}
+[4.213432] (-) TimerEvent: {}
+[4.313718] (-) TimerEvent: {}
+[4.413994] (-) TimerEvent: {}
+[4.514252] (-) TimerEvent: {}
+[4.614535] (-) TimerEvent: {}
+[4.714816] (-) TimerEvent: {}
+[4.815121] (-) TimerEvent: {}
+[4.915404] (-) TimerEvent: {}
+[5.015694] (-) TimerEvent: {}
+[5.115989] (-) TimerEvent: {}
+[5.216239] (-) TimerEvent: {}
+[5.316510] (-) TimerEvent: {}
+[5.416806] (-) TimerEvent: {}
+[5.517125] (-) TimerEvent: {}
+[5.617421] (-) TimerEvent: {}
+[5.717766] (-) TimerEvent: {}
+[5.818089] (-) TimerEvent: {}
+[5.918374] (-) TimerEvent: {}
+[6.018655] (-) TimerEvent: {}
+[6.118927] (-) TimerEvent: {}
+[6.219146] (-) TimerEvent: {}
+[6.319429] (-) TimerEvent: {}
+[6.419732] (-) TimerEvent: {}
+[6.520033] (-) TimerEvent: {}
+[6.620383] (-) TimerEvent: {}
+[6.720674] (-) TimerEvent: {}
+[6.821017] (-) TimerEvent: {}
+[6.921319] (-) TimerEvent: {}
+[7.021684] (-) TimerEvent: {}
+[7.122082] (-) TimerEvent: {}
+[7.222433] (-) TimerEvent: {}
+[7.322732] (-) TimerEvent: {}
+[7.423022] (-) TimerEvent: {}
+[7.523312] (-) TimerEvent: {}
+[7.623614] (-) TimerEvent: {}
+[7.723872] (-) TimerEvent: {}
+[7.824129] (-) TimerEvent: {}
+[7.924421] (-) TimerEvent: {}
+[8.024738] (-) TimerEvent: {}
+[8.125034] (-) TimerEvent: {}
+[8.225349] (-) TimerEvent: {}
+[8.325639] (-) TimerEvent: {}
+[8.425969] (-) TimerEvent: {}
+[8.526223] (-) TimerEvent: {}
+[8.626548] (-) TimerEvent: {}
+[8.726861] (-) TimerEvent: {}
+[8.827144] (-) TimerEvent: {}
+[8.927424] (-) TimerEvent: {}
+[9.027757] (-) TimerEvent: {}
+[9.128131] (-) TimerEvent: {}
+[9.228474] (-) TimerEvent: {}
+[9.328768] (-) TimerEvent: {}
+[9.429075] (-) TimerEvent: {}
+[9.529351] (-) TimerEvent: {}
+[9.629651] (-) TimerEvent: {}
+[9.729950] (-) TimerEvent: {}
+[9.830216] (-) TimerEvent: {}
+[9.930492] (-) TimerEvent: {}
+[10.030779] (-) TimerEvent: {}
+[10.131024] (-) TimerEvent: {}
+[10.231333] (-) TimerEvent: {}
+[10.331615] (-) TimerEvent: {}
+[10.431881] (-) TimerEvent: {}
+[10.532140] (-) TimerEvent: {}
+[10.632392] (-) TimerEvent: {}
+[10.734379] (-) TimerEvent: {}
+[10.834659] (-) TimerEvent: {}
+[10.934944] (-) TimerEvent: {}
+[11.035197] (-) TimerEvent: {}
+[11.135481] (-) TimerEvent: {}
+[11.235746] (-) TimerEvent: {}
+[11.336117] (-) TimerEvent: {}
+[11.439144] (-) TimerEvent: {}
+[11.539434] (-) TimerEvent: {}
+[11.639737] (-) TimerEvent: {}
+[11.740019] (-) TimerEvent: {}
+[11.840284] (-) TimerEvent: {}
+[11.940576] (-) TimerEvent: {}
+[12.040905] (-) TimerEvent: {}
+[12.141201] (-) TimerEvent: {}
+[12.241560] (-) TimerEvent: {}
+[12.303567] (jaeger_model) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libjaeger_model.so\x1b[0m\n'}
+[12.341688] (-) TimerEvent: {}
+[12.442026] (-) TimerEvent: {}
+[12.542349] (-) TimerEvent: {}
+[12.642768] (-) TimerEvent: {}
+[12.743179] (-) TimerEvent: {}
+[12.843699] (-) TimerEvent: {}
+[12.944327] (-) TimerEvent: {}
+[13.044866] (-) TimerEvent: {}
+[13.145155] (-) TimerEvent: {}
+[13.239374] (jaeger_model) StdoutLine: {'line': b'[100%] Built target jaeger_model\n'}
+[13.245255] (-) TimerEvent: {}
+[13.250353] (jaeger_model) CommandEnded: {'returncode': 0}
+[13.278880] (jaeger_model) JobProgress: {'identifier': 'jaeger_model', 'progress': 'install'}
+[13.287889] (jaeger_model) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model'], 'cwd': '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'carlos'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/carlos/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/carlos/ros2_ws/src/jaeger_model/install/lib:/home/carlos/catkin_warehouse/devel/lib:/home/carlos/ras/devel/lib:/home/carlos/ros2_ws/install/lib:/home/carlos/ros2_ws/src/install/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/carlos'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('OLDPWD', '/home/carlos/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.98.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/187/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/carlos/snap/code/common/.cache/immodules/immodules.cache'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/187/usr/share/code/code'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '1631'), ('BUNDLED_DEBUGPY_PATH', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/carlos/ros2_ws/src/jaeger_model/install:/home/carlos/ros2_ws/src/install:/home/carlos/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'carlos'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PKG_CONFIG_PATH', '/home/carlos/catkin_warehouse/devel/lib/pkgconfig:/home/carlos/ras/devel/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'carlos'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/carlos/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/carlos/.config/Code/User/globalStorage/github.copilot-chat/debugCommand'), ('SESSION_MANAGER', 'local/carlos-HP-EliteBook-x360-830-G6:@/tmp/.ICE-unix/1601,unix/carlos-HP-EliteBook-x360-830-G6:/tmp/.ICE-unix/1601'), ('GTK_EXE_PREFIX', '/snap/code/187/usr'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/80618b4c_fa2c_4c7f_8d96_20abd026d827'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LOCPATH', '/snap/code/187/usr/lib/locale'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-aeb8768c93c6fc02.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/carlos/snap/code/187/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.47DP52'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-cf26f789b8.sock'), ('GNOME_TERMINAL_SERVICE', ':1.103'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/carlos/snap/code/187/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/carlos/ros2_ws/src/jaeger_model/install:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('IGN_GAZEBO_SYSTEM_PLUGIN_PATH', '/home/carlos$/ros2_ws/src/jaeger_model/install/lib'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://192.168.68.104:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('IGN_GAZEBO_RESOURCE_PATH', '/home/carlos/.ignition/models'), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/carlos/snap/code/187/.local/share:/home/carlos/snap/code/187:/snap/code/187/usr/share:/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('ROS_HOSTNAME', '192.168.68.104'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/carlos/ros2_ws/src/jaeger_model/install:/opt/ros/humble:/home/carlos/catkin_warehouse/devel:/home/carlos/ras/devel:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install')]), 'shell': False}
+[13.295160] (jaeger_model) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[13.295547] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//config\n'}
+[13.295648] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//config/bridge_config.yaml\n'}
+[13.295721] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//launch\n'}
+[13.295788] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//launch/basic_jaeger.launch.py\n'}
+[13.295852] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf\n'}
+[13.295987] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/ensam1_tesis.SLDASM.csv\n'}
+[13.296046] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/jaeger_model.urdf\n'}
+[13.296132] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/jaeger_compl.urdf.xacro\n'}
+[13.296238] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//worlds\n'}
+[13.296333] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//worlds/empty.sdf\n'}
+[13.296393] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes\n'}
+[13.296452] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust3.STL\n'}
+[13.296511] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop1.STL\n'}
+[13.296569] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust2.STL\n'}
+[13.296627] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust1.STL\n'}
+[13.296687] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust6.STL\n'}
+[13.296746] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop3.STL\n'}
+[13.296805] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust5.STL\n'}
+[13.296863] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/base_link.STL\n'}
+[13.296921] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust4.STL\n'}
+[13.296978] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop2.STL\n'}
+[13.297035] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop4.STL\n'}
+[13.297104] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src\n'}
+[13.297163] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src/hello_world.hh\n'}
+[13.297221] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src/hello_world.cc\n'}
+[13.297316] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/lib/libjaeger_model.so\n'}
+[13.300368] (jaeger_model) StdoutLine: {'line': b'-- Set runtime path of "/home/carlos/ros2_ws/src/jaeger_model/install/lib/libjaeger_model.so" to ""\n'}
+[13.300525] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/package_run_dependencies/jaeger_model\n'}
+[13.300833] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/parent_prefix_path/jaeger_model\n'}
+[13.300914] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/ament_prefix_path.sh\n'}
+[13.300982] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/ament_prefix_path.dsv\n'}
+[13.301100] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/path.sh\n'}
+[13.301165] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/path.dsv\n'}
+[13.301228] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.bash\n'}
+[13.301288] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.sh\n'}
+[13.301349] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.zsh\n'}
+[13.301411] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.dsv\n'}
+[13.301473] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/package.dsv\n'}
+[13.301569] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/packages/jaeger_model\n'}
+[13.301670] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/cmake/jaeger_modelConfig.cmake\n'}
+[13.301727] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/cmake/jaeger_modelConfig-version.cmake\n'}
+[13.301783] (jaeger_model) StdoutLine: {'line': b'-- Up-to-date: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/package.xml\n'}
+[13.302946] (jaeger_model) CommandEnded: {'returncode': 0}
+[13.344287] (jaeger_model) JobEnded: {'identifier': 'jaeger_model', 'rc': 0}
+[13.344982] (-) EventReactorShutdown: {}

@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="jaeger">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0047638 0.061353 -0.00090391"
+        rpy="0 0 0" />
+      <mass
+        value="6.2889" />
+      <inertia
+        ixx="0.066113"
+        ixy="-3.6665E-07"
+        ixz="-3.8066E-06"
+        iyy="0.12812"
+        iyz="-8.7647E-07"
+        izz="0.066149" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="prop1_link">
+    <inertial>
+      <origin
+        xyz="0.018613 -0.022083 7.7652E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.02678" />
+      <inertia
+        ixx="4.495E-06"
+        ixy="2.3937E-07"
+        ixz="6.6896E-13"
+        iyy="4.6032E-06"
+        iyz="-9.4747E-14"
+        izz="7.1064E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/prop1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/prop1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="prop1_joint"
+    type="fixed">
+    <origin
+      xyz="0.11425 0.03 0.11246"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="prop1_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="prop2_link">
+    <inertial>
+      <origin
+        xyz="0.018613 -0.022083 7.7652E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.02678" />
+      <inertia
+        ixx="4.495E-06"
+        ixy="2.3937E-07"
+        ixz="6.6896E-13"
+        iyy="4.6032E-06"
+        iyz="-9.4747E-14"
+        izz="7.1064E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/prop2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/prop2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="prop2_joint"
+    type="fixed">
+    <origin
+      xyz="-0.04169 0.12205 0.11246"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="prop2_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="prop3_link">
+    <inertial>
+      <origin
+        xyz="0.018613 -0.022083 7.7652E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.02678" />
+      <inertia
+        ixx="4.495E-06"
+        ixy="2.3937E-07"
+        ixz="6.6896E-13"
+        iyy="4.6032E-06"
+        iyz="-9.4747E-14"
+        izz="7.1064E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/prop3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/prop3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="prop3_joint"
+    type="fixed">
+    <origin
+      xyz="0.02331 -0.12245 0.11246"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="prop3_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="prop4_link">
+    <inertial>
+      <origin
+        xyz="0.018613 -0.022083 7.7652E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.02678" />
+      <inertia
+        ixx="4.495E-06"
+        ixy="2.3937E-07"
+        ixz="6.6896E-13"
+        iyy="4.6032E-06"
+        iyz="-9.4747E-14"
+        izz="7.1064E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/prop4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/prop4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="prop4_joint"
+    type="fixed">
+    <origin
+      xyz="-0.13076 -0.03 0.11246"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="prop4_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="thrust1_link">
+    <inertial>
+      <origin
+        xyz="-2.0817E-17 -0.0076196 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0090665" />
+      <inertia
+        ixx="3.8664E-07"
+        ixy="-2.3698E-23"
+        ixz="2.647E-23"
+        iyy="1.2724E-06"
+        iyz="-2.1659E-23"
+        izz="1.3002E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thrust1_joint"
+    type="fixed">
+    <origin
+      xyz="0.12081 0 0"
+      rpy="1.5708 0 -1.827" />
+    <parent
+      link="base_link" />
+    <child
+      link="thrust1_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="thrust2_link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 -0.0076196 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0090665" />
+      <inertia
+        ixx="3.8664E-07"
+        ixy="-7.5323E-23"
+        ixz="-2.9779E-22"
+        iyy="1.2724E-06"
+        iyz="-1.5818E-23"
+        izz="1.3002E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thrust2_joint"
+    type="fixed">
+    <origin
+      xyz="0.05581 0.11258 0"
+      rpy="1.5708 0 -0.31392" />
+    <parent
+      link="base_link" />
+    <child
+      link="thrust2_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="thrust3_link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 -0.0076196 -2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0090665" />
+      <inertia
+        ixx="3.8664E-07"
+        ixy="-5.6178E-23"
+        ixz="7.9409E-23"
+        iyy="1.2724E-06"
+        iyz="-2.6463E-23"
+        izz="1.3002E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thrust3_joint"
+    type="fixed">
+    <origin
+      xyz="-0.07419 0.11258 0"
+      rpy="1.5708 0 0.66667" />
+    <parent
+      link="base_link" />
+    <child
+      link="thrust3_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="thrust4_link">
+    <inertial>
+      <origin
+        xyz="-6.9389E-18 -0.0076196 -2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0090665" />
+      <inertia
+        ixx="3.8664E-07"
+        ixy="-4.3577E-23"
+        ixz="-6.7498E-22"
+        iyy="1.2724E-06"
+        iyz="7.0284E-24"
+        izz="1.3002E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thrust4_joint"
+    type="fixed">
+    <origin
+      xyz="-0.13919 0 0"
+      rpy="1.5708 0 -1.3106" />
+    <parent
+      link="base_link" />
+    <child
+      link="thrust4_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="thrust5_link">
+    <inertial>
+      <origin
+        xyz="0 -0.0076196 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0090665" />
+      <inertia
+        ixx="3.8664E-07"
+        ixy="-2.5782E-23"
+        ixz="-6.6174E-22"
+        iyy="1.2724E-06"
+        iyz="-2.143E-23"
+        izz="1.3002E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thrust5_joint"
+    type="fixed">
+    <origin
+      xyz="-0.07419 -0.11258 0"
+      rpy="1.5708 0 -0.72863" />
+    <parent
+      link="base_link" />
+    <child
+      link="thrust5_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="thrust6_link">
+    <inertial>
+      <origin
+        xyz="-0.0047638 0.061353 -0.00090391"
+        rpy="0 0 0" />
+      <mass
+        value="6.2889" />
+      <inertia
+        ixx="0.066113"
+        ixy="-3.6665E-07"
+        ixz="-3.8066E-06"
+        iyy="0.12812"
+        iyz="-8.7647E-07"
+        izz="0.066149" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/thrust6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thrust6_joint"
+    type="fixed">
+    <origin
+      xyz="0.05581 -0.11258 0"
+      rpy="1.5708 0 0.75367" />
+    <parent
+      link="base_link" />
+    <child
+      link="thrust6_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+  <link name="imu_link"/>
+
+</robot>

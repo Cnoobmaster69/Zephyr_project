@@ -1,0 +1,4 @@
+source;share/jaeger_model/local_setup.bash
+source;share/jaeger_model/local_setup.dsv
+source;share/jaeger_model/local_setup.sh
+source;share/jaeger_model/local_setup.zsh

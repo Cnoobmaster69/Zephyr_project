@@ -1,0 +1,447 @@
+[0.000000] (-) TimerEvent: {}
+[0.000096] (jaeger_model) JobQueued: {'identifier': 'jaeger_model', 'dependencies': OrderedDict()}
+[0.000119] (jaeger_model) JobStarted: {'identifier': 'jaeger_model'}
+[0.007854] (jaeger_model) JobProgress: {'identifier': 'jaeger_model', 'progress': 'cmake'}
+[0.008037] (jaeger_model) Command: {'cmd': ['/usr/bin/cmake', '/home/carlos/ros2_ws/src/jaeger_model', '-DCMAKE_INSTALL_PREFIX=/home/carlos/ros2_ws/src/jaeger_model/install'], 'cwd': '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'carlos'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/carlos/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/carlos/catkin_warehouse/devel/lib:/home/carlos/ras/devel/lib:/home/carlos/ros2_ws/install/lib:/home/carlos/ros2_ws/src/install/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/carlos'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('OLDPWD', '/home/carlos/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.98.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/187/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/carlos/snap/code/common/.cache/immodules/immodules.cache'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/187/usr/share/code/code'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '1631'), ('BUNDLED_DEBUGPY_PATH', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/carlos/ros2_ws/src/install:/home/carlos/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'carlos'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PKG_CONFIG_PATH', '/home/carlos/catkin_warehouse/devel/lib/pkgconfig:/home/carlos/ras/devel/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'carlos'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/carlos/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/carlos/.config/Code/User/globalStorage/github.copilot-chat/debugCommand'), ('SESSION_MANAGER', 'local/carlos-HP-EliteBook-x360-830-G6:@/tmp/.ICE-unix/1601,unix/carlos-HP-EliteBook-x360-830-G6:/tmp/.ICE-unix/1601'), ('GTK_EXE_PREFIX', '/snap/code/187/usr'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/80618b4c_fa2c_4c7f_8d96_20abd026d827'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LOCPATH', '/snap/code/187/usr/lib/locale'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-aeb8768c93c6fc02.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/carlos/snap/code/187/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.47DP52'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-cf26f789b8.sock'), ('GNOME_TERMINAL_SERVICE', ':1.103'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/carlos/snap/code/187/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('IGN_GAZEBO_SYSTEM_PLUGIN_PATH', '/home/carlos$/ros2_ws/src/jaeger_model/install/lib'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://192.168.68.104:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('IGN_GAZEBO_RESOURCE_PATH', '/home/carlos/.ignition/models'), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/carlos/snap/code/187/.local/share:/home/carlos/snap/code/187:/snap/code/187/usr/share:/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('ROS_HOSTNAME', '192.168.68.104'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble:/home/carlos/catkin_warehouse/devel:/home/carlos/ras/devel:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install')]), 'shell': False}
+[0.085293] (jaeger_model) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099439] (-) TimerEvent: {}
+[0.138912] (jaeger_model) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.147332] (jaeger_model) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199544] (-) TimerEvent: {}
+[0.201538] (jaeger_model) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.208903] (jaeger_model) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.211753] (jaeger_model) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.211865] (jaeger_model) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.215871] (jaeger_model) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.278505] (jaeger_model) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.285066] (jaeger_model) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.285309] (jaeger_model) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.285616] (jaeger_model) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.287831] (jaeger_model) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.299596] (-) TimerEvent: {}
+[0.399825] (-) TimerEvent: {}
+[0.429209] (jaeger_model) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.499924] (-) TimerEvent: {}
+[0.523177] (jaeger_model) StdoutLine: {'line': b'-- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.569516] (jaeger_model) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.574590] (jaeger_model) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.584179] (jaeger_model) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.600009] (jaeger_model) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.600135] (-) TimerEvent: {}
+[0.626094] (jaeger_model) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.700236] (-) TimerEvent: {}
+[0.702234] (jaeger_model) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.705586] (jaeger_model) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.799293] (jaeger_model) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.800300] (-) TimerEvent: {}
+[0.829751] (jaeger_model) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.872628] (jaeger_model) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.883182] (jaeger_model) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.900438] (-) TimerEvent: {}
+[0.947585] (jaeger_model) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.948122] (jaeger_model) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.000578] (-) TimerEvent: {}
+[1.009220] (jaeger_model) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.010612] (jaeger_model) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.100669] (-) TimerEvent: {}
+[1.186203] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.186431] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-plugin1\n'}
+[1.187115] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-plugin1> component [register]\n'}
+[1.189777] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-plugin1-register -- found version 1.4.0\n'}
+[1.190140] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-plugin1-register\n'}
+[1.190624] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-plugin1 - found\n'}
+[1.190703] (jaeger_model) StdoutLine: {'line': b'\n'}
+[1.195927] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-gazebo6 -- found version 6.16.0\n'}
+[1.196345] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-gazebo6\n'}
+[1.198589] (jaeger_model) StdoutLine: {'line': b'-- Looking for sdformat12 -- found version 12.7.2\n'}
+[1.198993] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of sdformat12\n'}
+[1.200779] (-) TimerEvent: {}
+[1.203079] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'tinyxml2'\n"}
+[1.214539] (jaeger_model) StdoutLine: {'line': b'--   Found tinyxml2, version 9.0.0\n'}
+[1.241198] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.241520] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6\n'}
+[1.244385] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[1.244821] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-utils1\n'}
+[1.246363] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.246773] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-plugin1\n'}
+[1.246925] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-plugin1> component [loader]\n'}
+[1.249081] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-plugin1-loader -- found version 1.4.0\n'}
+[1.249467] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-plugin1-loader\n'}
+[1.250078] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-plugin1> component [register]\n'}
+[1.252843] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-transport11 -- found version 11.4.1\n'}
+[1.253196] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport11\n'}
+[1.280099] (jaeger_model) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") \n'}
+[1.289946] (jaeger_model) StdoutLine: {'line': b'-- Config-file not installed for ZeroMQ -- checking for pkg-config\n'}
+[1.293659] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'libzmq >= 4'\n"}
+[1.300902] (-) TimerEvent: {}
+[1.304328] (jaeger_model) StdoutLine: {'line': b'--   Found libzmq , version 4.3.4\n'}
+[1.334012] (jaeger_model) StdoutLine: {'line': b'-- Found ZeroMQ: TRUE (Required is at least version "4") \n'}
+[1.339384] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'uuid'\n"}
+[1.348278] (jaeger_model) StdoutLine: {'line': b'--   Found uuid, version 2.37.2\n'}
+[1.370535] (jaeger_model) StdoutLine: {'line': b'-- Found UUID: TRUE  \n'}
+[1.370872] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[1.371265] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-utils1\n'}
+[1.371366] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-utils1> component [cli]\n'}
+[1.373578] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-utils1-cli -- found version 1.5.1\n'}
+[1.373952] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-utils1-cli\n'}
+[1.376906] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.377247] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-msgs8\n'}
+[1.392682] (jaeger_model) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") \n'}
+[1.393408] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.400235] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-transport11> component [log]\n'}
+[1.401010] (-) TimerEvent: {}
+[1.402450] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-transport11-log -- found version 11.4.1\n'}
+[1.402859] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport11-log\n'}
+[1.403465] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-transport11> component [parameters]\n'}
+[1.405631] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-transport11-parameters -- found version 11.4.1\n'}
+[1.406015] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport11-parameters\n'}
+[1.406904] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.410702] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.411593] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4\n'}
+[1.411894] (jaeger_model) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[1.412959] (jaeger_model) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[1.414442] (jaeger_model) StdoutLine: {'line': b'-- Found DL: TRUE  \n'}
+[1.422864] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [profiler]\n'}
+[1.425122] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4-profiler -- found version 4.7.0\n'}
+[1.425529] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4-profiler\n'}
+[1.426157] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [events]\n'}
+[1.428459] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4-events -- found version 4.7.0\n'}
+[1.428926] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4-events\n'}
+[1.429239] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.429927] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [av]\n'}
+[1.432163] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4-av -- found version 4.7.0\n'}
+[1.432562] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4-av\n'}
+[1.436914] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'libswscale'\n"}
+[1.446465] (jaeger_model) StdoutLine: {'line': b'--   Found libswscale, version 5.9.100\n'}
+[1.470103] (jaeger_model) StdoutLine: {'line': b'-- Found SWSCALE: TRUE  \n'}
+[1.474100] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'libavdevice >= 56.4.100'\n"}
+[1.484345] (jaeger_model) StdoutLine: {'line': b'--   Found libavdevice , version 58.13.100\n'}
+[1.501147] (-) TimerEvent: {}
+[1.512234] (jaeger_model) StdoutLine: {'line': b'-- Found AVDEVICE: TRUE (Required is at least version "56.4.100") \n'}
+[1.517981] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'libavformat'\n"}
+[1.527624] (jaeger_model) StdoutLine: {'line': b'--   Found libavformat, version 58.76.100\n'}
+[1.552257] (jaeger_model) StdoutLine: {'line': b'-- Found AVFORMAT: TRUE  \n'}
+[1.556598] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'libavcodec'\n"}
+[1.566260] (jaeger_model) StdoutLine: {'line': b'--   Found libavcodec, version 58.134.100\n'}
+[1.590481] (jaeger_model) StdoutLine: {'line': b'-- Found AVCODEC: TRUE  \n'}
+[1.594615] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'libavutil'\n"}
+[1.601231] (-) TimerEvent: {}
+[1.603716] (jaeger_model) StdoutLine: {'line': b'--   Found libavutil, version 56.70.100\n'}
+[1.631179] (jaeger_model) StdoutLine: {'line': b'-- Found AVUTIL: TRUE  \n'}
+[1.636476] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-fuel_tools7 -- found version 7.3.0\n'}
+[1.636941] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-fuel_tools7\n'}
+[1.694333] (jaeger_model) StdoutLine: {'line': b'-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  \n'}
+[1.701338] (-) TimerEvent: {}
+[1.701801] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'jsoncpp'\n"}
+[1.713137] (jaeger_model) StdoutLine: {'line': b'--   Found jsoncpp, version 1.9.5\n'}
+[1.740259] (jaeger_model) StdoutLine: {'line': b'-- Found JSONCPP: TRUE  \n'}
+[1.744800] (jaeger_model) StdoutLine: {'line': b"-- Checking for module 'libzip'\n"}
+[1.754129] (jaeger_model) StdoutLine: {'line': b'--   Found libzip, version 1.7.3\n'}
+[1.776764] (jaeger_model) StdoutLine: {'line': b'-- Found ZIP: TRUE  \n'}
+[1.777097] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.777428] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.777848] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.793567] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-gui6 -- found version 6.8.0\n'}
+[1.795404] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-gui6\n'}
+[1.801509] (-) TimerEvent: {}
+[1.838363] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.838691] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.839049] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.839430] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-transport11 -- found version 11.4.1\n'}
+[1.842195] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-rendering6 -- found version 6.6.3\n'}
+[1.842600] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-rendering6\n'}
+[1.842848] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.843253] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6\n'}
+[1.843360] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-math6> component [eigen3]\n'}
+[1.846286] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6-eigen3 -- found version 6.15.1\n'}
+[1.846824] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6-eigen3\n'}
+[1.854974] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.855358] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4\n'}
+[1.855480] (jaeger_model) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[1.855557] (jaeger_model) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[1.863421] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [graphics]\n'}
+[1.865853] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4-graphics -- found version 4.7.0\n'}
+[1.866315] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4-graphics\n'}
+[1.866674] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.867033] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[1.867784] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [events]\n'}
+[1.868487] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.868915] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-plugin1\n'}
+[1.869065] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-plugin1> component [all]\n'}
+[1.871298] (jaeger_model) StdoutLine: {'line': b'-- Looking for all libraries of ignition-plugin1 -- found version 1.4.0\n'}
+[1.871732] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.873937] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.901604] (-) TimerEvent: {}
+[1.920754] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-physics5 -- found version 5.3.2\n'}
+[1.921273] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-physics5\n'}
+[1.921592] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.921987] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.922346] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[1.924139] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-physics5> component [heightmap]\n'}
+[1.927416] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-physics5-heightmap -- found version 5.3.2\n'}
+[1.927939] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-physics5-heightmap\n'}
+[1.928325] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.928951] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-physics5> component [mesh]\n'}
+[1.931821] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-physics5-mesh -- found version 5.3.2\n'}
+[1.932274] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-physics5-mesh\n'}
+[1.932588] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.933148] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-physics5> component [sdf]\n'}
+[1.935555] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-physics5-sdf -- found version 5.3.2\n'}
+[1.936003] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-physics5-sdf\n'}
+[1.936454] (jaeger_model) StdoutLine: {'line': b'-- Looking for sdformat12 -- found version 12.7.2\n'}
+[1.939546] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.0\n'}
+[1.939958] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6\n'}
+[1.955653] (jaeger_model) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") \n'}
+[1.956364] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.956740] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.957105] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-transport11 -- found version 11.4.1\n'}
+[1.957453] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-rendering6 -- found version 6.6.3\n'}
+[1.957876] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.958194] (jaeger_model) StdoutLine: {'line': b'-- Looking for sdformat12 -- found version 12.7.2\n'}
+[1.959042] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [air_pressure]\n'}
+[1.961431] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-air_pressure -- found version 6.8.0\n'}
+[1.961917] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-air_pressure\n'}
+[1.962638] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [altimeter]\n'}
+[1.964907] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-altimeter -- found version 6.8.0\n'}
+[1.965297] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-altimeter\n'}
+[1.965909] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [imu]\n'}
+[1.968043] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-imu -- found version 6.8.0\n'}
+[1.968433] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-imu\n'}
+[1.969056] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [force_torque]\n'}
+[1.971171] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-force_torque -- found version 6.8.0\n'}
+[1.971596] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-force_torque\n'}
+[1.972199] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [logical_camera]\n'}
+[1.974432] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-logical_camera -- found version 6.8.0\n'}
+[1.974814] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-logical_camera\n'}
+[1.975648] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [magnetometer]\n'}
+[1.977820] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-magnetometer -- found version 6.8.0\n'}
+[1.978200] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-magnetometer\n'}
+[1.978823] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [navsat]\n'}
+[1.980932] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-navsat -- found version 6.8.0\n'}
+[1.981315] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-navsat\n'}
+[1.981943] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [rendering]\n'}
+[1.984632] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-rendering -- found version 6.8.0\n'}
+[1.985036] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-rendering\n'}
+[1.986254] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [lidar]\n'}
+[1.988416] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-lidar -- found version 6.8.0\n'}
+[1.988874] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-lidar\n'}
+[1.989250] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.0\n'}
+[1.990046] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [gpu_lidar]\n'}
+[1.992285] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-gpu_lidar -- found version 6.8.0\n'}
+[1.992703] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-gpu_lidar\n'}
+[1.993032] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.0\n'}
+[1.993653] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [camera]\n'}
+[1.995934] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-camera -- found version 6.8.0\n'}
+[1.996318] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-camera\n'}
+[1.996587] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.0\n'}
+[1.997342] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [boundingbox_camera]\n'}
+[1.999484] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-boundingbox_camera -- found version 6.8.0\n'}
+[1.999919] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-boundingbox_camera\n'}
+[2.000526] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [segmentation_camera]\n'}
+[2.001661] (-) TimerEvent: {}
+[2.002727] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-segmentation_camera -- found version 6.8.0\n'}
+[2.003116] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-segmentation_camera\n'}
+[2.003743] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [depth_camera]\n'}
+[2.005931] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-depth_camera -- found version 6.8.0\n'}
+[2.006313] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-depth_camera\n'}
+[2.006611] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.0\n'}
+[2.007347] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [rgbd_camera]\n'}
+[2.010033] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-rgbd_camera -- found version 6.8.0\n'}
+[2.010602] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-rgbd_camera\n'}
+[2.014514] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.0\n'}
+[2.014621] (jaeger_model) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [thermal_camera]\n'}
+[2.015831] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6-thermal_camera -- found version 6.8.0\n'}
+[2.016432] (jaeger_model) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-thermal_camera\n'}
+[2.016925] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.0\n'}
+[2.018456] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-rendering6 -- found version 6.6.3\n'}
+[2.018880] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.021950] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[2.039056] (jaeger_model) StdoutLine: {'line': b'-- Looking for ignition-gazebo6 - found\n'}
+[2.039196] (jaeger_model) StdoutLine: {'line': b'\n'}
+[2.094584] (jaeger_model) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.101737] (-) TimerEvent: {}
+[2.105056] (jaeger_model) StdoutLine: {'line': b'-- Generating done\n'}
+[2.106949] (jaeger_model) StdoutLine: {'line': b'-- Build files have been written to: /home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model\n'}
+[2.124324] (jaeger_model) CommandEnded: {'returncode': 0}
+[2.124778] (jaeger_model) JobProgress: {'identifier': 'jaeger_model', 'progress': 'build'}
+[2.125064] (jaeger_model) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model', '--', '-j8', '-l8'], 'cwd': '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'carlos'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/carlos/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/carlos/catkin_warehouse/devel/lib:/home/carlos/ras/devel/lib:/home/carlos/ros2_ws/install/lib:/home/carlos/ros2_ws/src/install/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/carlos'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('OLDPWD', '/home/carlos/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.98.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/187/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/carlos/snap/code/common/.cache/immodules/immodules.cache'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/187/usr/share/code/code'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '1631'), ('BUNDLED_DEBUGPY_PATH', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/carlos/ros2_ws/src/install:/home/carlos/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'carlos'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PKG_CONFIG_PATH', '/home/carlos/catkin_warehouse/devel/lib/pkgconfig:/home/carlos/ras/devel/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'carlos'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/carlos/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/carlos/.config/Code/User/globalStorage/github.copilot-chat/debugCommand'), ('SESSION_MANAGER', 'local/carlos-HP-EliteBook-x360-830-G6:@/tmp/.ICE-unix/1601,unix/carlos-HP-EliteBook-x360-830-G6:/tmp/.ICE-unix/1601'), ('GTK_EXE_PREFIX', '/snap/code/187/usr'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/80618b4c_fa2c_4c7f_8d96_20abd026d827'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LOCPATH', '/snap/code/187/usr/lib/locale'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-aeb8768c93c6fc02.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/carlos/snap/code/187/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.47DP52'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-cf26f789b8.sock'), ('GNOME_TERMINAL_SERVICE', ':1.103'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/carlos/snap/code/187/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('IGN_GAZEBO_SYSTEM_PLUGIN_PATH', '/home/carlos$/ros2_ws/src/jaeger_model/install/lib'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://192.168.68.104:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('IGN_GAZEBO_RESOURCE_PATH', '/home/carlos/.ignition/models'), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/carlos/snap/code/187/.local/share:/home/carlos/snap/code/187:/snap/code/187/usr/share:/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('ROS_HOSTNAME', '192.168.68.104'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble:/home/carlos/catkin_warehouse/devel:/home/carlos/ras/devel:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install')]), 'shell': False}
+[2.172018] (jaeger_model) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/jaeger_model.dir/src/hello_world.cc.o\x1b[0m\n'}
+[2.201869] (-) TimerEvent: {}
+[2.302143] (-) TimerEvent: {}
+[2.402458] (-) TimerEvent: {}
+[2.502729] (-) TimerEvent: {}
+[2.603015] (-) TimerEvent: {}
+[2.703339] (-) TimerEvent: {}
+[2.803638] (-) TimerEvent: {}
+[2.903955] (-) TimerEvent: {}
+[3.004229] (-) TimerEvent: {}
+[3.104510] (-) TimerEvent: {}
+[3.204730] (-) TimerEvent: {}
+[3.305000] (-) TimerEvent: {}
+[3.405257] (-) TimerEvent: {}
+[3.505532] (-) TimerEvent: {}
+[3.605806] (-) TimerEvent: {}
+[3.706102] (-) TimerEvent: {}
+[3.806361] (-) TimerEvent: {}
+[3.906601] (-) TimerEvent: {}
+[4.006876] (-) TimerEvent: {}
+[4.107178] (-) TimerEvent: {}
+[4.209038] (-) TimerEvent: {}
+[4.309595] (-) TimerEvent: {}
+[4.410817] (-) TimerEvent: {}
+[4.511094] (-) TimerEvent: {}
+[4.611360] (-) TimerEvent: {}
+[4.711612] (-) TimerEvent: {}
+[4.811884] (-) TimerEvent: {}
+[4.912204] (-) TimerEvent: {}
+[5.012542] (-) TimerEvent: {}
+[5.112773] (-) TimerEvent: {}
+[5.213031] (-) TimerEvent: {}
+[5.313292] (-) TimerEvent: {}
+[5.413597] (-) TimerEvent: {}
+[5.513864] (-) TimerEvent: {}
+[5.614123] (-) TimerEvent: {}
+[5.714399] (-) TimerEvent: {}
+[5.814691] (-) TimerEvent: {}
+[5.914989] (-) TimerEvent: {}
+[6.015312] (-) TimerEvent: {}
+[6.115627] (-) TimerEvent: {}
+[6.215905] (-) TimerEvent: {}
+[6.316171] (-) TimerEvent: {}
+[6.416449] (-) TimerEvent: {}
+[6.516730] (-) TimerEvent: {}
+[6.616997] (-) TimerEvent: {}
+[6.717283] (-) TimerEvent: {}
+[6.817588] (-) TimerEvent: {}
+[6.917854] (-) TimerEvent: {}
+[7.018133] (-) TimerEvent: {}
+[7.118405] (-) TimerEvent: {}
+[7.218684] (-) TimerEvent: {}
+[7.318954] (-) TimerEvent: {}
+[7.419219] (-) TimerEvent: {}
+[7.519504] (-) TimerEvent: {}
+[7.619797] (-) TimerEvent: {}
+[7.720109] (-) TimerEvent: {}
+[7.820388] (-) TimerEvent: {}
+[7.920687] (-) TimerEvent: {}
+[8.020962] (-) TimerEvent: {}
+[8.121226] (-) TimerEvent: {}
+[8.221515] (-) TimerEvent: {}
+[8.321747] (-) TimerEvent: {}
+[8.422028] (-) TimerEvent: {}
+[8.522349] (-) TimerEvent: {}
+[8.622705] (-) TimerEvent: {}
+[8.723034] (-) TimerEvent: {}
+[8.823361] (-) TimerEvent: {}
+[8.923685] (-) TimerEvent: {}
+[9.024075] (-) TimerEvent: {}
+[9.124417] (-) TimerEvent: {}
+[9.224720] (-) TimerEvent: {}
+[9.324983] (-) TimerEvent: {}
+[9.425258] (-) TimerEvent: {}
+[9.525541] (-) TimerEvent: {}
+[9.625807] (-) TimerEvent: {}
+[9.726096] (-) TimerEvent: {}
+[9.826368] (-) TimerEvent: {}
+[9.926635] (-) TimerEvent: {}
+[10.026909] (-) TimerEvent: {}
+[10.127185] (-) TimerEvent: {}
+[10.227456] (-) TimerEvent: {}
+[10.327745] (-) TimerEvent: {}
+[10.428039] (-) TimerEvent: {}
+[10.528348] (-) TimerEvent: {}
+[10.628602] (-) TimerEvent: {}
+[10.728907] (-) TimerEvent: {}
+[10.829239] (-) TimerEvent: {}
+[10.929572] (-) TimerEvent: {}
+[11.029905] (-) TimerEvent: {}
+[11.130249] (-) TimerEvent: {}
+[11.230518] (-) TimerEvent: {}
+[11.330781] (-) TimerEvent: {}
+[11.431044] (-) TimerEvent: {}
+[11.531306] (-) TimerEvent: {}
+[11.631563] (-) TimerEvent: {}
+[11.731834] (-) TimerEvent: {}
+[11.832095] (-) TimerEvent: {}
+[11.932350] (-) TimerEvent: {}
+[12.032618] (-) TimerEvent: {}
+[12.132879] (-) TimerEvent: {}
+[12.233153] (-) TimerEvent: {}
+[12.333403] (-) TimerEvent: {}
+[12.433681] (-) TimerEvent: {}
+[12.533939] (-) TimerEvent: {}
+[12.634201] (-) TimerEvent: {}
+[12.734462] (-) TimerEvent: {}
+[12.834735] (-) TimerEvent: {}
+[12.935007] (-) TimerEvent: {}
+[13.035263] (-) TimerEvent: {}
+[13.135550] (-) TimerEvent: {}
+[13.235810] (-) TimerEvent: {}
+[13.336066] (-) TimerEvent: {}
+[13.436326] (-) TimerEvent: {}
+[13.536627] (-) TimerEvent: {}
+[13.636939] (-) TimerEvent: {}
+[13.737246] (-) TimerEvent: {}
+[13.837521] (-) TimerEvent: {}
+[13.937762] (-) TimerEvent: {}
+[14.038012] (-) TimerEvent: {}
+[14.079041] (jaeger_model) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libjaeger_model.so\x1b[0m\n'}
+[14.138155] (-) TimerEvent: {}
+[14.238477] (-) TimerEvent: {}
+[14.338770] (-) TimerEvent: {}
+[14.439158] (-) TimerEvent: {}
+[14.539536] (-) TimerEvent: {}
+[14.639830] (-) TimerEvent: {}
+[14.740138] (-) TimerEvent: {}
+[14.840473] (jaeger_model) StdoutLine: {'line': b'[100%] Built target jaeger_model\n'}
+[14.840638] (-) TimerEvent: {}
+[14.852395] (jaeger_model) CommandEnded: {'returncode': 0}
+[14.878247] (jaeger_model) JobProgress: {'identifier': 'jaeger_model', 'progress': 'install'}
+[14.886174] (jaeger_model) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model'], 'cwd': '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'carlos'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIO_MODULE_DIR', '/home/carlos/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/carlos/catkin_warehouse/devel/lib:/home/carlos/ras/devel/lib:/home/carlos/ros2_ws/install/lib:/home/carlos/ros2_ws/src/install/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/carlos'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('OLDPWD', '/home/carlos/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.98.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/187/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/carlos/snap/code/common/.cache/immodules/immodules.cache'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/187/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/187/usr/share/code/code'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '1631'), ('BUNDLED_DEBUGPY_PATH', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/carlos/ros2_ws/src/install:/home/carlos/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'carlos'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PKG_CONFIG_PATH', '/home/carlos/catkin_warehouse/devel/lib/pkgconfig:/home/carlos/ras/devel/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'carlos'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/carlos/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/carlos/.config/Code/User/globalStorage/github.copilot-chat/debugCommand'), ('SESSION_MANAGER', 'local/carlos-HP-EliteBook-x360-830-G6:@/tmp/.ICE-unix/1601,unix/carlos-HP-EliteBook-x360-830-G6:/tmp/.ICE-unix/1601'), ('GTK_EXE_PREFIX', '/snap/code/187/usr'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/80618b4c_fa2c_4c7f_8d96_20abd026d827'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LOCPATH', '/snap/code/187/usr/lib/locale'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/carlos/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-aeb8768c93c6fc02.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/carlos/snap/code/187/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.47DP52'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-cf26f789b8.sock'), ('GNOME_TERMINAL_SERVICE', ':1.103'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/carlos/snap/code/187/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('IGN_GAZEBO_SYSTEM_PLUGIN_PATH', '/home/carlos$/ros2_ws/src/jaeger_model/install/lib'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://192.168.68.104:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('IGN_GAZEBO_RESOURCE_PATH', '/home/carlos/.ignition/models'), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/carlos/ros2_ws/src/jaeger_model/build/jaeger_model'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/carlos/snap/code/187/.local/share:/home/carlos/snap/code/187:/snap/code/187/usr/share:/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('ROS_HOSTNAME', '192.168.68.104'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble:/home/carlos/catkin_warehouse/devel:/home/carlos/ras/devel:/home/carlos/ros2_ws/install:/home/carlos/ros2_ws/src/install')]), 'shell': False}
+[14.892607] (jaeger_model) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[14.892868] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//config\n'}
+[14.892938] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//config/bridge_config.yaml\n'}
+[14.893175] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//launch\n'}
+[14.893356] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//launch/basic_jaeger.launch.py\n'}
+[14.893474] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf\n'}
+[14.893575] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/ensam1_tesis.SLDASM.csv\n'}
+[14.893632] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/jaeger_model.urdf\n'}
+[14.893949] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//urdf/jaeger_compl.urdf.xacro\n'}
+[14.894214] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//worlds\n'}
+[14.894297] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//worlds/empty.sdf\n'}
+[14.894390] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes\n'}
+[14.894452] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust3.STL\n'}
+[14.894752] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop1.STL\n'}
+[14.895183] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust2.STL\n'}
+[14.895393] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust1.STL\n'}
+[14.895899] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust6.STL\n'}
+[14.896104] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop3.STL\n'}
+[14.896553] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust5.STL\n'}
+[14.896963] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/base_link.STL\n'}
+[14.899182] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/thrust4.STL\n'}
+[14.899589] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop2.STL\n'}
+[14.900015] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//meshes/prop4.STL\n'}
+[14.900416] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src\n'}
+[14.900533] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src/hello_world.hh\n'}
+[14.900669] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model//src/hello_world.cc\n'}
+[14.900917] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/lib/libjaeger_model.so\n'}
+[14.904421] (jaeger_model) StdoutLine: {'line': b'-- Set runtime path of "/home/carlos/ros2_ws/src/jaeger_model/install/lib/libjaeger_model.so" to ""\n'}
+[14.904661] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/package_run_dependencies/jaeger_model\n'}
+[14.904812] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/parent_prefix_path/jaeger_model\n'}
+[14.905060] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/ament_prefix_path.sh\n'}
+[14.905203] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/ament_prefix_path.dsv\n'}
+[14.905387] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/path.sh\n'}
+[14.905516] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/environment/path.dsv\n'}
+[14.905753] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.bash\n'}
+[14.905893] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.sh\n'}
+[14.906079] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.zsh\n'}
+[14.906215] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/local_setup.dsv\n'}
+[14.906341] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/package.dsv\n'}
+[14.906657] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/ament_index/resource_index/packages/jaeger_model\n'}
+[14.906810] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/cmake/jaeger_modelConfig.cmake\n'}
+[14.906941] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/cmake/jaeger_modelConfig-version.cmake\n'}
+[14.907088] (jaeger_model) StdoutLine: {'line': b'-- Installing: /home/carlos/ros2_ws/src/jaeger_model/install/share/jaeger_model/package.xml\n'}
+[14.908679] (jaeger_model) CommandEnded: {'returncode': 0}
+[14.940758] (-) TimerEvent: {}
+[14.947899] (jaeger_model) JobEnded: {'identifier': 'jaeger_model', 'rc': 0}
+[14.949197] (-) EventReactorShutdown: {}
