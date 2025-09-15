@@ -1,0 +1,10 @@
+valve_controller:
+  ros__parameters:
+    type: rpi5_gpio_control/RpiValveController
+    topic: /valves/bitmask_cmd
+    interfaces:
+      - valves/valve0/level
+      - valves/valve1/level
+      - valves/valve2/level
+      - valves/valve3/level
+      - valves/valve4/level

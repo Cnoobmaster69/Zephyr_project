@@ -1,0 +1,11 @@
+<library path="rpi5_forward_system">
+  <class name="rpi5_gpio_control/RpiForwardSystem"
+         type="rpi5_gpio_control::RpiForwardSystem"
+         base_class_type="hardware_interface::SystemInterface"/>
+</library>
+
+<library path="rpi5_valve_controller">
+  <class name="rpi5_gpio_control/RpiValveController"
+         type="rpi5_gpio_control::RpiValveController"
+         base_class_type="controller_interface::ControllerInterface"/>
+</library>

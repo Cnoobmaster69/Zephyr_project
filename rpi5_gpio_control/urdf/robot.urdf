@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot name="rpi5_gpio">
+  <!-- Link “dummy” para satisfacer robot_state_publisher -->
+  <link name="base_link"/>
+
+  <!-- Tu ros2_control -->
+  <ros2_control name="rpi5_gpio" type="system">
+    <hardware>
+      <plugin>rpi5_gpio_control/RpiForwardSystem</plugin>
+      <param name="count">5</param>
+      <param name="out_topic">/valves/bitmask</param>
+    </hardware>
+
+    <gpio name="valves">
+      <command_interface name="valve0/level"/><state_interface name="valve0/level"/>
+      <command_interface name="valve1/level"/><state_interface name="valve1/level"/>
+      <command_interface name="valve2/level"/><state_interface name="valve2/level"/>
+      <command_interface name="valve3/level"/><state_interface name="valve3/level"/>
+      <command_interface name="valve4/level"/><state_interface name="valve4/level"/>
+    </gpio>
+  </ros2_control>
+</robot>
+

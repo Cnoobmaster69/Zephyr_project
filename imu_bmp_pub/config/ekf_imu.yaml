@@ -1,0 +1,39 @@
+ekf_filter_node:
+  ros__parameters:
+    frequency: 50.0                 # EKF update frequency
+    two_d_mode: true             # Set to true if you are using a 2D robot
+    map_frame: map                  # Defaults to "map" if unspecifie
+    odom_frame: odom                # Defaults to "odom" if unspecifie
+    base_link_frame: base_link      # Defaults to "base_link" if unspec
+    world_frame: odom               # Defaults to the value of odom_fr
+
+    # Real odometry
+    odom0: /odom
+    # IMU
+    imu0: /imu/data
+    imu0_differential: false
+    imu0_relative: false
+    imu0_queue_size: 10
+    # Si tus aceleraciones incluyen gravedad (lo normal),
+    # deja esto en true para que el EKF la quite usando la orientación:
+    imu0_remove_gravitational_acceleration: true
+
+    # Qué campos de la IMU usar (15 flags: x y z r p y vx vy vz vr vp vy ax ay az)
+    # Usamos roll/pitch (no yaw porque no hay mag), w (gyro), y aceleraciones:
+    imu0_config: [false, false, false,
+                   true,  true,  false,
+                   false, false, false,
+                   true,  true,  true,
+                   true,  true,  true]
+
+    # odom0_config: [true,  true,  false,
+    #                false, false, true,
+    #                true,  true, false,
+    #                false, false, true,
+    #                false, false, false]
+
+    odom0_config: [false,  false,  false,
+                   false, false, false,
+                   false,  false, false,
+                   false, false, false,
+                   false, false, false]

@@ -1,0 +1,24 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+
+    # Controladores a cargar por el Controller Manager
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    my_robot_controller:
+      type: jaeger_model/MyRobotController
+
+
+# Parámetros de tu controlador
+my_robot_controller:
+  ros__parameters:
+    # type: jaeger_model/MyRobotController
+    joints:
+      - x_joint
+      - y_joint
+
+    command_interfaces:
+      - digital
+    
+    state_interfaces:
+      - position
