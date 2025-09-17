@@ -9,6 +9,10 @@ from launch_ros.actions import Node
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from xacro import process_file
 from nav2_common.launch import ReplaceString
+from launch.actions import TimerAction
+from launch.actions import RegisterEventHandler
+from launch.event_handlers import OnProcessExit
+from launch.event_handlers import OnProcessStart
 
 ARGUMENTS = [
     DeclareLaunchArgument('world_name', default_value='empty.sdf', description='Name of the world to load. Match with map if using Nav2.'),
@@ -69,9 +73,12 @@ def generate_launch_description():
 
     use_sim_time = LaunchConfiguration('use_sim_time')
     rsp_frequency = LaunchConfiguration('rsp_frequency')
+    
 
-    ld.add_action(
-        Node(
+
+
+
+    robot_state_publisher = Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
             name='robot_state_publisher',
@@ -86,9 +93,10 @@ def generate_launch_description():
             remappings=[
                 ('/tf', 'tf'),
                 ('/tf_static', 'tf_static'),
-            ],
-        ),
-    )
+            ]
+        )
+        
+    ld.add_action(robot_state_publisher)
 
     entity = LaunchConfiguration('entity')
     initial_pose_x = LaunchConfiguration('initial_pose_x')
@@ -129,18 +137,18 @@ def generate_launch_description():
         )
     )
 
-    ld.add_action(
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            arguments=['-d', os.path.join(pkg_rasbot_gazebo, 'rviz', 'robot_config.rviz')],
-            parameters=[{'use_sim_time': True}],
-            remappings=[
-                ('/tf', 'tf'),
-                ('/tf_static', 'tf_static'),
-            ],
-        ),
-    )
+    # ld.add_action(
+    #     Node(
+    #         package='rviz2',
+    #         executable='rviz2',
+    #         arguments=['-d', os.path.join(pkg_rasbot_gazebo, 'rviz', 'robot_config.rviz')],
+    #         parameters=[{'use_sim_time': True}],
+    #         remappings=[
+    #             ('/tf', 'tf'),
+    #             ('/tf_static', 'tf_static'),
+    #         ],
+    #     ),
+    # )
     ld.add_action(
         Node(
             package='robot_localization',
@@ -157,4 +165,72 @@ def generate_launch_description():
             ],
         )
     )
+
+
+
+# ----------------------------------------------------------------
+    # 1) Nodo ros2_control_node (controller_manager)
+    # ----------------------------------------------------------------
+    # Asume que tienes un controllers.yaml en config/controllers.yaml
+
+    controllers_yaml = os.path.join(
+    get_package_share_directory('jaeger_model'),
+    'config',
+    'controllers.yaml'
+)
+    ros2_control_node = Node(
+        package='controller_manager',
+        executable='ros2_control_node',
+        name='controller_manager',
+        output='screen',
+        parameters=[
+        controllers_yaml
+        # {'robot_description': get_robot_description()},
+        # {'use_sim_time': use_sim_time}
+     ],
+    )
+    # ld.add_action(ros2_control_node)
+
+    joint_state_broadcaster_spawner = Node(
+            package='controller_manager',
+            executable='spawner',
+            arguments=['joint_state_broadcaster'],
+            output='screen'
+        )
+    # ld.add_action(joint_state_broadcaster_spawner)
+
+    myctl_spawner = Node(
+            package='controller_manager',
+            executable='spawner',
+            arguments=['my_robot_controller', '--param-file', controllers_yaml],
+            output='screen'
+        )
+    # ld.add_action(myctl_spawner)
+
+    delay_ros2_control_node = RegisterEventHandler(
+    event_handler=OnProcessStart(
+        target_action=robot_state_publisher,
+        on_start=[ros2_control_node]
+    ))
+    ld.add_action(delay_ros2_control_node) 
+
+    delay_jsb = RegisterEventHandler(
+    event_handler=OnProcessStart(
+        target_action=ros2_control_node,
+        on_start=[joint_state_broadcaster_spawner]
+    ))
+    ld.add_action(delay_jsb)  
+
+    delay_controller = RegisterEventHandler(
+    event_handler=OnProcessStart(
+        target_action=joint_state_broadcaster_spawner,
+        on_start=[myctl_spawner]
+    ))
+    ld.add_action(delay_controller)  
+
+
+
+
+
+
     return ld

@@ -1,0 +1,19 @@
+<library path="jaeger_model">
+    <class name="jaeger_model/MyRobotHardware"
+           type="jaeger_model::MyRobotHardware"
+           base_class_type="hardware_interface::SystemInterface">
+      <description>
+        Hardware interface for Jaeger robot.
+        - Subscribes to 'odometry_filtered' for joint positions (x, y).  
+        - Exports 2 state interfaces: x_joint/position, y_joint/position.  
+        - Exports 4 digital command interfaces: valve1, valve2, valve3, valve4.
+      </description>
+    </class>
+    <class name="jaeger_model/MyRobotController"
+        type="jaeger_model::MyRobotController"
+        base_class_type="controller_interface::ControllerInterface">
+      <description>
+        Robot controller plugin for Jaeger robot.
+      </description>
+    </class>
+  </library>

@@ -45,7 +45,7 @@
     </collision>
   </link>
   <link
-    name="prop1_link">
+    name="valve1">
     <inertial>
       <origin
         xyz="0.018613 -0.022083 7.7652E-10"
@@ -93,12 +93,12 @@
     <parent
       link="base_link" />
     <child
-      link="prop1_link" />
+      link="valve1" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="prop2_link">
+    name="valve2">
     <inertial>
       <origin
         xyz="0.018613 -0.022083 7.7652E-10"
@@ -146,12 +146,12 @@
     <parent
       link="base_link" />
     <child
-      link="prop2_link" />
+      link="valve2" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="prop3_link">
+    name="valve3">
     <inertial>
       <origin
         xyz="0.018613 -0.022083 7.7652E-10"
@@ -199,12 +199,12 @@
     <parent
       link="base_link" />
     <child
-      link="prop3_link" />
+      link="valve3" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="prop4_link">
+    name="valve4">
     <inertial>
       <origin
         xyz="0.018613 -0.022083 7.7652E-10"
@@ -252,7 +252,7 @@
     <parent
       link="base_link" />
     <child
-      link="prop4_link" />
+      link="valve4" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -581,5 +581,35 @@
   </joint>
 
   <link name="imu_link"/>
+
+  <link name="x_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  
+  <joint name="x_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="x_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="y_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <joint name="y_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="y_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+
 
 </robot>

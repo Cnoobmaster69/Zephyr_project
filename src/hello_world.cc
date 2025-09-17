@@ -20,9 +20,20 @@
 
 // This is required to register the plugin. Make sure the interfaces match
 // what's in the header.
-IGNITION_ADD_PLUGIN(HelloWorld, gz::sim::System, HelloWorld::ISystemPostUpdate, HelloWorld::ISystemConfigure)
+GZ_ADD_PLUGIN(HelloWorld, gz::sim::System, HelloWorld::ISystemPostUpdate, HelloWorld::ISystemConfigure)
 
-IGNITION_ADD_PLUGIN_ALIAS(HelloWorld, "gz::sim::system::HelloWorld")
+GZ_ADD_PLUGIN_ALIAS(HelloWorld, "gz::sim::system::HelloWorld")
+
+static inline int bit_as_int(uint32_t m, unsigned i) {
+  return ( (m >> i) & 0x1u ) ? 1 : 0;
+}
+
+
+HelloWorld::HelloWorld()
+{
+  // Constructor
+  gz_node_.Subscribe ("/model/jaeger/valves_cmd_mask", &HelloWorld::OnGazeboValvesMsg, this);
+}
 
 // Here we implement the PostUpdate function, which is called at every
 // iteration.
@@ -43,88 +54,123 @@ void HelloWorld::PostUpdate(const gz::sim::UpdateInfo& _info, const gz::sim::Ent
   this->pub_example_ros_->publish(value_ros);
   this->pub_example_ros_2->publish(string_msg);
 
-  this->model_=4;
+  this->valve_1_ = bit_as_int(latest_gz_valves_msg_.data(), 0);
+  this->valve_2_ = bit_as_int(latest_gz_valves_msg_.data(), 1);
+  this->valve_3_ = bit_as_int(latest_gz_valves_msg_.data(), 2);
+  this->valve_4_ = bit_as_int(latest_gz_valves_msg_.data(), 3);
+
+  // Reset the flag.
+  new_msg_available_ = false;
+
+  this->model_=14;
 
   gz::sim::Model my_model = gz::sim::Model(this->model_);
 
   igndbg << my_model.Name(_ecm) << std::endl;
 
-  gz::sim::Entity link_ptr = my_model.LinkByName(_ecm, "link");
+  gz::sim::Entity link_ptr = my_model.LinkByName(_ecm, "base_link");
 
   gz::sim::Link link_base = gz::sim::Link(link_ptr);
+  
+  // Verificar y mostrar el nombre del enlace
+  if (auto link_name = link_base.Name(const_cast<gz::sim::EntityComponentManager&>(_ecm)); link_name.has_value())
+  {
 
-  gz::math::Pose3d pose = link_base.WorldPose(_ecm).value();
-
-  igndbg << pose << std::endl;
-
-  // Get World
-  gz::sim::Entity world_ptr =_ecm.EntityByComponents(gz::sim::components::World());
-
-  gz::sim::World world = gz::sim::World(world_ptr);
-
-  std::vector<gz::sim::Entity> models = world.Models(_ecm);
-  //Print Models
-  for(uint64_t i=0; i < world.ModelCount(_ecm); i++) {
-    gz::sim::Entity model_ptr = models[i];
-
-    gz::sim::Model model = gz::sim::Model(model_ptr);
-
-    igndbg << model.Name(_ecm) << std::endl;
   }
+  else
+  {
+    ignerr << "No se pudo obtener el nombre del enlace" << std::endl;
+  }
+
+  gz::math::Pose3d world_pose = link_base.WorldPose(const_cast<gz::sim::EntityComponentManager&>(_ecm)).value();
+
+  if(this->valve_1_==1)
+  {
+     // Fuerza en el marco local
+     gz::math::Vector3d local_force(10.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
+     gz::math::Vector3d offset(0.0, 0.25, 0.0);
+ 
+     // Convertir la fuerza al marco global
+     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+     // Aplicar la fuerza en el marco local
+     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  } else{
+      // No aplicar fuerza si la válvula está cerrada
+    gz::math::Vector3d local_force(0.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
+     gz::math::Vector3d offset(0.0, 0.25, 0.0);
+ 
+     // Convertir la fuerza al marco global
+     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+     // Aplicar la fuerza en el marco local
+     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  }
+  if(this->valve_2_==1)
+  {
+     // Fuerza en el marco local
+     gz::math::Vector3d local_force(-10.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
+     gz::math::Vector3d offset(0.0, 0.25, 0.0);
+ 
+     // Convertir la fuerza al marco global
+     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+     // Aplicar la fuerza en el marco local
+     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  } else{
+      // No aplicar fuerza si la válvula está cerrada
+    gz::math::Vector3d local_force(0.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
+     gz::math::Vector3d offset(0.0, 0.25, 0.0);
+ 
+     // Convertir la fuerza al marco global
+     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+     // Aplicar la fuerza en el marco local
+     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  }
+  if(this->valve_3_==1)
+  {
+     // Fuerza en el marco local
+     gz::math::Vector3d local_force(10.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
+     gz::math::Vector3d offset(0.0, -0.25, 0.0);
+ 
+     // Convertir la fuerza al marco global
+     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+     // Aplicar la fuerza en el marco local
+     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  } else{
+      // No aplicar fuerza si la válvula está cerrada
+    gz::math::Vector3d local_force(0.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
+     gz::math::Vector3d offset(0.0, -0.25, 0.0);
+ 
+     // Convertir la fuerza al marco global
+     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+     // Aplicar la fuerza en el marco local
+     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  }
+  if(this->valve_4_==1)
+  {
+     // Fuerza en el marco local
+     gz::math::Vector3d local_force(-10.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
+     gz::math::Vector3d offset(0.0, -0.25, 0.0);
+ 
+     // Convertir la fuerza al marco global
+     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+     // Aplicar la fuerza en el marco local
+     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  } else{
+      // No aplicar fuerza si la válvula está cerrada
+    gz::math::Vector3d local_force(0.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
+     gz::math::Vector3d offset(0.0, -0.25, 0.0);
+ 
+     // Convertir la fuerza al marco global
+     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+     // Aplicar la fuerza en el marco local
+     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  }
+    
+
   // Incrementar el contador de tiempo
 static auto last_force_time = std::chrono::steady_clock::now();
 auto current_time = std::chrono::steady_clock::now();
 auto elapsed_time = std::chrono::duration_cast<std::chrono::seconds>(current_time - last_force_time);
 
-  if (elapsed_time.count() >= 5) // Cada 5 segundos
-  {
-    // Obtener el enlace al que se aplicará la fuerza
-    this->model_ = 10;
-    gz::sim::Model my_model_f = gz::sim::Model(this->model_);
-
-    gz::sim::Entity link_ptr_f = my_model_f.LinkByName(_ecm, "base_link");
-    if (!link_ptr_f)
-    {
-      ignerr << "Link pointer not found para el enlace 'base_link'" << std::endl;
-      return;
-    }
-
-    gz::sim::Link link_base = gz::sim::Link(link_ptr_f);
-
-    // Obtener la pose del enlace desde el EntityComponentManager
-    auto poseComp = _ecm.Component<gz::sim::components::Pose>(link_base.Entity());
-    if (!poseComp)
-    {
-      ignerr << "No se pudo obtener el componente Pose del enlace" << std::endl;
-      return;
-    }
-
-    // La pose está disponible en poseComp->Data()
-    gz::math::Pose3d world_pose = poseComp->Data();
-    igndbg << "Pose del enlace: " << world_pose << std::endl;
-
-    // Fuerza en el marco local
-    gz::math::Vector3d local_force(100.0, 100.0, 100.0); // Fuerza de 1000 N en el eje X local
-
-    // Convertir la fuerza al marco global
-    gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
-
-    // Aplicar la fuerza en el marco global
-    link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), world_force);
-
-    // Verificar y mostrar el nombre del enlace
-    if (auto link_name = link_base.Name(const_cast<gz::sim::EntityComponentManager&>(_ecm)); link_name.has_value())
-    {
-      ignerr << "Fuerza aplicada: " << world_force << " al enlace: " << link_name.value() << std::endl;
-    }
-    else
-    {
-      ignerr << "No se pudo obtener el nombre del enlace" << std::endl;
-    }
-
-    // Actualizar el tiempo de la última fuerza aplicada
-    //last_force_time = current_time;
-  }
 }
 
 void HelloWorld::Configure(const gz::sim::Entity& _entity, const std::shared_ptr<const sdf::Element>& _sdf,
@@ -189,6 +235,7 @@ void HelloWorld::Configure(const gz::sim::Entity& _entity, const std::shared_ptr
   this->pub_example_ros_ = this->ros_node->create_publisher<std_msgs::msg::Float64>(topic_example_msgs, 10);
   this->pub_example_ros_2 = this->ros_node->create_publisher<std_msgs::msg::String>(topic_xd, 100);
 
+  
   model_ = _entity;
 
   gz::sim::Model my_model = gz::sim::Model(this->model_);
@@ -218,4 +265,11 @@ void HelloWorld::Configure(const gz::sim::Entity& _entity, const std::shared_ptr
   {
     _ecm.CreateComponent(link_base.Entity(), gz::sim::components::LinearVelocity());
   }
+}
+
+void HelloWorld::OnGazeboValvesMsg (const gz::msgs::UInt32 &_msg)
+{
+    // Save the latest valves message:
+    latest_gz_valves_msg_ = _msg;
+    new_msg_available_ = true;
 }
