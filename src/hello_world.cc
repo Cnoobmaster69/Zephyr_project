@@ -84,86 +84,137 @@ void HelloWorld::PostUpdate(const gz::sim::UpdateInfo& _info, const gz::sim::Ent
 
   gz::math::Pose3d world_pose = link_base.WorldPose(const_cast<gz::sim::EntityComponentManager&>(_ecm)).value();
 
-  if(this->valve_1_==1)
+  auto apply_local_force = [&](gz::sim::Link& link_base,
+      gz::sim::EntityComponentManager& ecm,
+      const gz::math::Vector3d& f_local,
+      const gz::math::Vector3d& r_local)
   {
-     // Fuerza en el marco local
-     gz::math::Vector3d local_force(10.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
-     gz::math::Vector3d offset(0.0, 0.25, 0.0);
+  // Pose del link en mundo
+  auto wp = link_base.WorldPose(ecm);
+  if (!wp) return;  // aún no disponible esta iteración
+
+  // Rotación del link → mundo
+  const auto& R = wp->Rot();
+
+  // Fuerza en mundo y offset en frame del link (API lo pide así)
+  const gz::math::Vector3d f_world = R.RotateVector(f_local);
+
+  // Aplica fuerza de 1 paso de simulación
+  link_base.AddWorldForce(ecm, f_world, r_local);
+  };
+
+    // Offsets en frame del link
+  const gz::math::Vector3d r_front (0.0,  0.20, 0.0);
+  const gz::math::Vector3d r_back  (0.0, -0.20, 0.0);
+  const gz::math::Vector3d nadaxd  (0.0,  0.0,  0.0);
+
+  // Empujes locales (±X del dispositivo)
+  const gz::math::Vector3d thrust_fwd (+0.25, 0.0, 0.0);
+  const gz::math::Vector3d thrust_back(-0.25, 0.0, 0.0);
+  const gz::math::Vector3d no_thrust(0.0,   0.0, 0.0);
+
+  if (this->valve_1_==1) {apply_local_force(link_base, const_cast<gz::sim::EntityComponentManager&>(_ecm),
+                                  thrust_fwd, r_back);}
+
+  else apply_local_force(link_base, const_cast<gz::sim::EntityComponentManager&>(_ecm),
+                                  no_thrust, nadaxd);
+
+  if (this->valve_2_==1) {apply_local_force(link_base, const_cast<gz::sim::EntityComponentManager&>(_ecm),
+                                  thrust_back, r_back);}
+  
+  else apply_local_force(link_base, const_cast<gz::sim::EntityComponentManager&>(_ecm),
+                                  no_thrust, nadaxd);
+
+  if (this->valve_3_==1) {apply_local_force(link_base, const_cast<gz::sim::EntityComponentManager&>(_ecm),
+                                  thrust_fwd, r_front);}
+  else apply_local_force(link_base, const_cast<gz::sim::EntityComponentManager&>(_ecm),
+  no_thrust, nadaxd);
+
+  if (this->valve_4_==1) {apply_local_force(link_base, const_cast<gz::sim::EntityComponentManager&>(_ecm),
+                                  thrust_back, r_front);}
+  else apply_local_force(link_base, const_cast<gz::sim::EntityComponentManager&>(_ecm),
+  no_thrust, nadaxd);
+
+  // if(this->valve_1_==1)
+  // {
+  //    // Fuerza en el marco local
+  //    gz::math::Vector3d local_force(0.25, 0.0, 0.0); // Fuerza de 0.25 N en el eje X y Z local
+  //    gz::math::Vector3d offset(0.0, 0.2, 0.0);
  
-     // Convertir la fuerza al marco global
-     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
-     // Aplicar la fuerza en el marco local
-     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
-  } else{
-      // No aplicar fuerza si la válvula está cerrada
-    gz::math::Vector3d local_force(0.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
-     gz::math::Vector3d offset(0.0, 0.25, 0.0);
+  //    // Convertir la fuerza al marco global
+  //    gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+  //    // Aplicar la fuerza en el marco local
+  //    link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  // } else{
+  //     // No aplicar fuerza si la válvula está cerrada
+  //   gz::math::Vector3d local_force(0.0, 0.0, 0.0); // Fuerza de 10 N en el eje X y Z local
+  //    gz::math::Vector3d offset(0.0, 0.2, 0.0);
  
-     // Convertir la fuerza al marco global
-     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
-     // Aplicar la fuerza en el marco local
-     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
-  }
-  if(this->valve_2_==1)
-  {
-     // Fuerza en el marco local
-     gz::math::Vector3d local_force(-10.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
-     gz::math::Vector3d offset(0.0, 0.25, 0.0);
+  //    // Convertir la fuerza al marco global
+  //    gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+  //    // Aplicar la fuerza en el marco local
+  //    link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  // }
+  // if(this->valve_2_==1)
+  // {
+  //    // Fuerza en el marco local
+  //    gz::math::Vector3d local_force(-0.25, 0.0, 0.0); // Fuerza de 10 N en el eje X y Z local
+  //    gz::math::Vector3d offset(0.0, 0.20, 0.0);
  
-     // Convertir la fuerza al marco global
-     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
-     // Aplicar la fuerza en el marco local
-     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
-  } else{
-      // No aplicar fuerza si la válvula está cerrada
-    gz::math::Vector3d local_force(0.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
-     gz::math::Vector3d offset(0.0, 0.25, 0.0);
+  //    // Convertir la fuerza al marco global
+  //    gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+  //    // Aplicar la fuerza en el marco local
+  //    link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  // } else{
+  //     // No aplicar fuerza si la válvula está cerrada
+  //   gz::math::Vector3d local_force(0.0, 0.0, 0.0); // Fuerza de 10 N en el eje X y Z local
+  //    gz::math::Vector3d offset(0.0, 0.20, 0.0);
  
-     // Convertir la fuerza al marco global
-     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
-     // Aplicar la fuerza en el marco local
-     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
-  }
-  if(this->valve_3_==1)
-  {
-     // Fuerza en el marco local
-     gz::math::Vector3d local_force(10.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
-     gz::math::Vector3d offset(0.0, -0.25, 0.0);
+  //    // Convertir la fuerza al marco global
+  //    gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+  //    // Aplicar la fuerza en el marco local
+  //    link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  // }
+  // if(this->valve_3_==1)
+  // {
+  //    // Fuerza en el marco local
+  //    gz::math::Vector3d local_force(0.25, 0.0, 0.0); // Fuerza de 10 N en el eje X y Z local
+  //    gz::math::Vector3d offset(0.0, -0.20, 0.0);
  
-     // Convertir la fuerza al marco global
-     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
-     // Aplicar la fuerza en el marco local
-     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
-  } else{
-      // No aplicar fuerza si la válvula está cerrada
-    gz::math::Vector3d local_force(0.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
-     gz::math::Vector3d offset(0.0, -0.25, 0.0);
+  //    // Convertir la fuerza al marco global
+  //    gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+  //    // Aplicar la fuerza en el marco local
+  //    link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  // } else{
+  //     // No aplicar fuerza si la válvula está cerrada
+  //   gz::math::Vector3d local_force(0.0, 0.0, 0.0); // Fuerza de 10 N en el eje X y Z local
+  //    gz::math::Vector3d offset(0.0, -0.2, 0.0);
  
-     // Convertir la fuerza al marco global
-     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
-     // Aplicar la fuerza en el marco local
-     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
-  }
-  if(this->valve_4_==1)
-  {
-     // Fuerza en el marco local
-     gz::math::Vector3d local_force(-10.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
-     gz::math::Vector3d offset(0.0, -0.25, 0.0);
+  //    // Convertir la fuerza al marco global
+  //    gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+  //    // Aplicar la fuerza en el marco local
+  //    link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  // }
+  // if(this->valve_4_==1)
+  // {
+  //    // Fuerza en el marco local
+  //    gz::math::Vector3d local_force(-0.25, 0.0, 0.0); // Fuerza de 10 N en el eje X y Z local
+  //    gz::math::Vector3d offset(0.0, -0.2, 0.0);
  
-     // Convertir la fuerza al marco global
-     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
-     // Aplicar la fuerza en el marco local
-     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
-  } else{
-      // No aplicar fuerza si la válvula está cerrada
-    gz::math::Vector3d local_force(0.0, 0.0, 10.0); // Fuerza de 10 N en el eje X y Z local
-     gz::math::Vector3d offset(0.0, -0.25, 0.0);
+  //    // Convertir la fuerza al marco global
+  //    gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+  //    // Aplicar la fuerza en el marco local
+  //    link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  // } else{
+  //     // No aplicar fuerza si la válvula está cerrada
+  //   gz::math::Vector3d local_force(0.0, 0.0, 0.0); // Fuerza de 10 N en el eje X y Z local
+  //    gz::math::Vector3d offset(0.0, -0.2, 0.0);
  
-     // Convertir la fuerza al marco global
-     gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
-     // Aplicar la fuerza en el marco local
-     link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
-  }
+  //    // Convertir la fuerza al marco global
+  //    gz::math::Vector3d world_force = world_pose.Rot().RotateVector(local_force);
+  //    // Aplicar la fuerza en el marco local
+  //    link_base.AddWorldForce(const_cast<gz::sim::EntityComponentManager&>(_ecm), local_force, offset);
+  // }
     
 
   // Incrementar el contador de tiempo

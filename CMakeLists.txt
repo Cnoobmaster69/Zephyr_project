@@ -14,6 +14,8 @@ find_package(rcl_lifecycle REQUIRED)
 find_package(rcl_interfaces REQUIRED)
 find_package(realtime_tools REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
 # Dependencias para ros2_control
 find_package(hardware_interface REQUIRED)
@@ -64,6 +66,8 @@ target_link_libraries(${PROJECT_NAME}
   controller_manager::controller_manager
   rcl_lifecycle::rcl_lifecycle
   rclcpp::rclcpp
+  tf2::tf2
+  tf2_geometry_msgs::tf2_geometry_msgs
   
   )
 
@@ -82,6 +86,9 @@ ament_target_dependencies(${PROJECT_NAME}
   realtime_tools
   hardware_interface
   controller_interface
+  pluginlib
+  tf2
+  tf2_geometry_msgs
 )
 
 

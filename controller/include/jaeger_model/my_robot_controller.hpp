@@ -56,16 +56,68 @@ private:
   void odom_cb_(const nav_msgs::msg::Odometry::SharedPtr msg);
   void target_cb_(const geometry_msgs::msg::Point::SharedPtr msg);
 
-  double kp_dist_{0.05};   // tunable: ganancia proporcional para control de posición
-  double kp_yaw_{0.01};    // tunable: ganancia proporcional para control de orientación
-  double v_max_{0.5};    // tunable: velocidad lineal máxima (m/s)
-  double w_max_{2.0};    // tunable: velocidad angular máxima (rad/s)
-  double base_half_width_{0.5};
-  double hyst_band_{0.2}; // tunable: banda de histéresis para evitar oscilaciones ON/OFF
-  double pwm_period_{0.1}; // tunable: periodo del PWM interno (segundos)}
-  double pwm_phase_{0.0};  // fase del PWM interno (segundos)
-  double deadband_pos_{0.2}; // tunable: zona muerta para considerar que se ha llegado a la posición (m)
-  double deadband_yaw_{0.2};  // tunable: zona muerta para considerar que se ha llegado a la orientación (rad)
+
+  // // Ganancias y límites
+  // double kp_x_{0.3};
+  // double kd_x_{1.0};
+  // double u_max_newton_{20.0};   // saturación de fuerza ±20 N
+
+  // // PWM
+  // double pwm_hz_{12.0};
+  // double pwm_period_{1.0/12.0};
+  // double pwm_phase_{0.0};       // [0,1) diente de sierra
+  // double pwm_elapsed_{0.0};     // acumulador para recalcular duty
+  // double duty_fwd_{0.0};
+  // double duty_rev_{0.0};
+
+  // // Bandas muertas
+  // double pos_deadband_{0.01};   // ya usabas deadband_; puedes unificar
+  // double vel_deadband_{0.01};   // opcional para evitar “creep”
+
+// --- Ganancias (a tunear) ---
+double kp_rho_{9.0};     // [N/m]   empuje vs distancia al objetivo
+double kd_vx_{12.0};      // [N·s/m] freno por velocidad en eje x del robot
+double kp_yaw_{0.0};     // [N·m/rad] par de guiñada vs error de yaw
+double kd_yaw_{0.0};     // [N·m·s/rad] freno por velocidad angular (r)
+
+// --- Geometría / límites físicos ---
+double half_track_m_{0.20};   // [m] semidistancia lateral (brazo b)
+double u_max_newton_{0.5};   // [N] empuje total máx (2 válvulas en paralelo)
+                              // => por lado: F_side_max = u_max/2
+// Límite de par máximo implícito: tau_max = b * u_max
+
+// --- Bandas muertas / gating ---
+double pos_deadband_{0.1};       // [m] cerca del objetivo, apaga
+double yaw_deadband_{5.0 * M_PI/180.0}; // [rad] ~2°
+double vel_deadband_{0.03};       // [m/s] evita creep
+
+// Opcional: reducir avance si hay gran desalineación (0 desactiva)
+double min_cos_for_surge_{0.0};   // [0..1], p.ej. 0.2 si quieres gatear surge
+
+// --- PWM (si no los tienes ya) ---
+double pwm_hz_{12.0};             // [Hz] frecuencia del PWM “soft”
+double pwm_period_{1.0/12.0};     // [s]  período
+double pwm_phase_{0.0};
+double pwm_elapsed_{0.0};
+
+// --- Duties por válvula (por lado) ---
+double duty_L_fwd_{0.0};  // válvula 1 (izq +X)
+double duty_L_rev_{0.0};  // válvula 2 (izq -X)
+double duty_R_fwd_{0.0};  // válvula 3 (der +X)
+double duty_R_rev_{0.0};  // válvula 4 (der -X)
+
+// --- (Opcional) Suavizado de duty entre periodos para menos “clack” ---
+double duty_slew_rate_{0.05}; // cambio máx de duty por recomputación (0..1)
+
+// --- Helpers/estado interno (si no existen) ---
+inline double wrapPi(double a) const {
+  while (a >  M_PI) a -= 2*M_PI;
+  while (a < -M_PI) a += 2*M_PI;
+  return a;
+}
+
+double yaw_rate_deadband_{0.05};   // [rad/s]
+bool   stop_require_position_{true}; // en pruebas de yaw: false
 
 //     // Estado para el eje X
 // enum class XMode { Idle, Forward, Backward };
