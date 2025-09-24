@@ -53,7 +53,7 @@ def generate_launch_description():
     ctrl_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["my_robot_controller", '--param-file', controllers_file],
+        arguments=["my_robot_controller", "--controller-manager", "/controller_manager"],
         output="screen",
     )
 

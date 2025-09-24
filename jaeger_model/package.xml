@@ -27,6 +27,8 @@
   <depend>joint_state_broadcaster</depend>
   <depend>control_msgs</depend>
   <depend>xacro</depend>  
+  <depend>tf2</depend>
+  <depend>tf2_geometry_msgs</depend>
 
   
 

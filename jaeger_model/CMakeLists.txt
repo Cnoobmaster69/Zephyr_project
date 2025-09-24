@@ -14,6 +14,8 @@ find_package(rcl_lifecycle REQUIRED)
 find_package(rcl_interfaces REQUIRED)
 find_package(realtime_tools REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
 # Dependencias para ros2_control
 find_package(hardware_interface REQUIRED)
@@ -23,6 +25,16 @@ find_package(pluginlib REQUIRED)
 find_package(controller_manager REQUIRED)
 
 find_package(controller_manager 4.0.0)
+
+# libgpiod C++ via pkg-config (libgpiodcxx)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(GPIODCXX REQUIRED IMPORTED_TARGET libgpiodcxx)
+
+add_executable(gpiod_link_node src/gpiod_link_node.cpp)
+ament_target_dependencies(gpiod_link_node rclcpp)
+target_link_libraries(gpiod_link_node PkgConfig::GPIODCXX)
+install(TARGETS gpiod_link_node DESTINATION lib/${PROJECT_NAME})
+
 
 
 add_library(${PROJECT_NAME} SHARED
@@ -43,6 +55,9 @@ target_link_libraries(${PROJECT_NAME}
   controller_manager::controller_manager
   rcl_lifecycle::rcl_lifecycle
   rclcpp::rclcpp
+  PkgConfig::GPIODCXX
+  tf2::tf2
+  tf2_geometry_msgs::tf2_geometry_msgs
   )
 
 # Export hardware plugins
@@ -60,6 +75,8 @@ ament_target_dependencies(${PROJECT_NAME}
   realtime_tools
   hardware_interface
   controller_interface
+  tf2
+  tf2_geometry_msgs
 )
 
 install(
@@ -83,5 +100,7 @@ install(
 install(TARGETS
   ${PROJECT_NAME}
   DESTINATION lib)
+
+
 
 ament_package()

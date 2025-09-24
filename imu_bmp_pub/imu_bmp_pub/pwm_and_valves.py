@@ -19,14 +19,14 @@ class PwmAndValves(Node):
         # Barrido global para pwm_pins
         self.declare_parameter('pwm_sweep_on_start', True)
         self.declare_parameter('pwm_sweep_min_pct', 4.0)
-        self.declare_parameter('pwm_sweep_max_pct', 6.0)
+        self.declare_parameter('pwm_sweep_max_pct', 6.1)
         self.declare_parameter('pwm_sweep_step_pct', 0.2)
         self.declare_parameter('pwm_sweep_duration_s', 10.0)
 
         # ----------- Parámetros (válvulas con PWM) -----------
         self.declare_parameter('valve_pins', [17, 27, 22, 23, 24])   # BCM
-        self.declare_parameter('valve_pwm_freq', 15.0)               # Hz
-        self.declare_parameter('valve_duty_pct', 50.0)               # % (global inicial)
+        self.declare_parameter('valve_pwm_freq', 8.0)               # Hz
+        self.declare_parameter('valve_duty_pct', 100.0)               # % (global inicial)
         # Failsafe + bitmask inicial
         self.declare_parameter('start_mask', 0)
         self.declare_parameter('auto_off_timeout', 0.0)              # s; 0 = desactivado

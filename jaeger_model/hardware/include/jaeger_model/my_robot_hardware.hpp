@@ -13,6 +13,7 @@
 #include "hardware_interface/system_interface.hpp"
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 #include "hardware_interface/types/hardware_interface_type_values.hpp"
+#include <gpiod.hpp>
 
 namespace jaeger_model {
 
@@ -24,12 +25,17 @@ namespace jaeger_model {
   
     std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
     std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
+
+    hardware_interface::CallbackReturn on_configure(const rclcpp_lifecycle::State & previous_state) override;
   
     hardware_interface::return_type read(
       const rclcpp::Time &, const rclcpp::Duration &) override;
   
     hardware_interface::return_type write(
       const rclcpp::Time &, const rclcpp::Duration &) override;
+    
+    hardware_interface::CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state) override;
+
   
   private:
     // Storage for all state interfaces declared under <joint> in <ros2_control>
@@ -39,6 +45,13 @@ namespace jaeger_model {
     // Storage for all command interfaces declared under <gpio> in <ros2_control>
     std::vector<std::pair<std::string, std::string>> gpio_cmd_index_; // (gpio_name, iface)
     std::vector<double> gpio_cmd_storage_;
+    
+    std::string chip_name_{"gpiochip4"};
+    std::vector<unsigned> offsets_{17,27,22,23};
+    bool active_low_{false};
+
+    gpiod::chip chip_;
+    std::vector<gpiod::line> lines_;
   };
   
   } // namespace jaeger_model

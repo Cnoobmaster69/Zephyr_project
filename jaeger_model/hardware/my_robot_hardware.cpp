@@ -68,6 +68,35 @@ hardware_interface::CallbackReturn MyRobotHardware::on_init(
   return hardware_interface::CallbackReturn::SUCCESS;
 }
 
+hardware_interface::CallbackReturn MyRobotHardware::on_configure(const rclcpp_lifecycle::State &)
+{
+  try {
+    // Constructor C++ v1.x: (device, how). Usa OPEN_LOOKUP para buscar por nombre "gpiochipN".
+    chip_ = gpiod::chip(chip_name_, gpiod::chip::OPEN_LOOKUP);
+
+    lines_.clear();
+    lines_.reserve(offsets_.size());
+
+    const auto flags = active_low_
+    ? gpiod::line_request::FLAG_ACTIVE_LOW
+    : std::bitset<32>{};
+
+    for (auto off : offsets_) {
+      gpiod::line ln = chip_.get_line(off);                   // ← obtiene la línea
+      ln.request({ "jaeger_hw", gpiod::line_request::DIRECTION_OUTPUT, flags }, 0);                      // ← salida nivel bajo
+      lines_.push_back(std::move(ln));
+    }
+
+    // Failsafe: todo apagado
+    for (auto &ln : lines_) ln.set_value(0);
+  } catch (const std::exception &e) {
+    RCLCPP_ERROR(rclcpp::get_logger("MyRobotHardware"),
+                 "GPIO configure failed: %s", e.what());
+    return CallbackReturn::ERROR;
+  }
+  return CallbackReturn::SUCCESS;
+}
+
 std::vector<hardware_interface::StateInterface> MyRobotHardware::export_state_interfaces()
 {
   std::vector<hardware_interface::StateInterface> out;
@@ -121,6 +150,13 @@ hardware_interface::return_type MyRobotHardware::read(
 hardware_interface::return_type MyRobotHardware::write(
   const rclcpp::Time &, const rclcpp::Duration &)
 {
+  // Actuate GPIO lines according to command values
+  const size_t n = std::min(lines_.size(), gpio_cmd_storage_.size());
+  for (size_t i = 0; i < n; ++i) {
+    const int v = (gpio_cmd_storage_[i] > 0.5) ? 1 : 0;  // 1=ON, 0=OFF
+    lines_[i].set_value(v);
+  }
+
   // Here you would actuate your real/virtual hardware using the latest commands.
   // For now we just log the current command values (0.0 ~ OFF, 1.0 ~ ON).
   if (!gpio_cmd_storage_.empty())
@@ -139,6 +175,14 @@ hardware_interface::return_type MyRobotHardware::write(
     }
   }
   return hardware_interface::return_type::OK;
+}
+
+hardware_interface::CallbackReturn MyRobotHardware::on_deactivate(const rclcpp_lifecycle::State &)
+{
+  // Apaga y libera (se liberan al destruir 'line', aquí sólo limpias)
+  for (auto &ln : lines_) { if (ln) ln.set_value(0); }
+  lines_.clear();
+  return CallbackReturn::SUCCESS;
 }
 
 }  // namespace jaeger_model
