@@ -211,21 +211,21 @@ def generate_launch_description():
         target_action=robot_state_publisher,
         on_start=[ros2_control_node]
     ))
-    ld.add_action(delay_ros2_control_node) 
+    # ld.add_action(delay_ros2_control_node) 
 
     delay_jsb = RegisterEventHandler(
     event_handler=OnProcessStart(
         target_action=ros2_control_node,
         on_start=[joint_state_broadcaster_spawner]
     ))
-    ld.add_action(delay_jsb)  
+    # ld.add_action(delay_jsb)  
 
     delay_controller = RegisterEventHandler(
     event_handler=OnProcessStart(
         target_action=joint_state_broadcaster_spawner,
         on_start=[myctl_spawner]
     ))
-    ld.add_action(delay_controller)  
+    # ld.add_action(delay_controller)  
 
 
 
