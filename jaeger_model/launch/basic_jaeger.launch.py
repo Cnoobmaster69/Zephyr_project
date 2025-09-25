@@ -77,8 +77,9 @@ def generate_launch_description():
       
 
     return LaunchDescription([
-        rsp,
-        delay_ros2_control_node,
+        # rsp,
+        # delay_ros2_control_node,
+        cm,
         delay_jsb,
         delay_controller,
     ])

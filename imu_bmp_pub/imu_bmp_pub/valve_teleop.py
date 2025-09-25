@@ -22,7 +22,8 @@ MASK_RIGHT = 0b00110  # 27 & 22
 class ValveTeleop(Node):
     def __init__(self):
         super().__init__('valve_teleop')
-        self.pub = self.create_publisher(UInt8, 'valves/bitmask', 10)
+        # self.pub = self.create_publisher(UInt8, 'valves/bitmask', 10)
+        self.pub = self.create_publisher(UInt8, 'valves_cmd_mask', 100)
         self.get_logger().info("Teleop de válvulas listo. " + HELP.replace('\n', ' '))
 
     def publish_mask(self, mask: int):
