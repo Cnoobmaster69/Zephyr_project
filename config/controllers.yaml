@@ -3,14 +3,13 @@ controller_manager:
     update_rate: 100
     use_sim_time: true
 
-    # Controladores a cargar por el Controller Manager
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
     my_robot_controller:
       type: jaeger_model/MyRobotController
 
 
-# Parámetros de tu controlador
+# Parámetros del controlador xd
 my_robot_controller:
   ros__parameters:
     # type: jaeger_model/MyRobotController
@@ -40,8 +39,8 @@ my_robot_controller:
     pwm_hz: 12.0
     duty_slew_rate: 0.20
 
-    # odom_topic: "odometry/filtered"        # donde publicas la odometría
-    # setpoint_topic: "position_setpoint"    # (opcional) si enviarás consignas X/Y por tópico
+    # odom_topic: "odometry/filtered"       
+    # setpoint_topic: "position_setpoint"    
     # state_joints: [x_joint, y_joint]
     # valve_names: ["valve1","valve2","valve3","valve4"]
     # deadband: 0.1

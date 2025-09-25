@@ -106,7 +106,7 @@ double duty_L_rev_{0.0};  // válvula 2 (izq -X)
 double duty_R_fwd_{0.0};  // válvula 3 (der +X)
 double duty_R_rev_{0.0};  // válvula 4 (der -X)
 
-// --- (Opcional) Suavizado de duty entre periodos para menos “clack” ---
+// --- (Opcional) Suavizado de duty entre periodos
 double duty_slew_rate_{0.05}; // cambio máx de duty por recomputación (0..1)
 
 // --- Helpers/estado interno (si no existen) ---
@@ -128,7 +128,7 @@ bool   stop_require_position_{true}; // en pruebas de yaw: false
 // double since_switch_s_{0.0};
 
 // // Histéresis
-// double x_on_th_{0.3};   // entra a ON si |error| > 0.10 m (ejemplo)
+// double x_on_th_{0.3};   // entra a ON si |error| > 0.10 m 
 // double x_off_th_{0.10};  // vuelve a IDLE si |error| < 0.05 m
 
 };

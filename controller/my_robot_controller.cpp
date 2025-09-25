@@ -66,7 +66,7 @@ MyRobotController::on_configure(const rclcpp_lifecycle::State & /*previous_state
     return controller_interface::CallbackReturn::ERROR;
   }
 
-  // Suscripciones (NO en update(); aquí, fuera de tiempo real)
+  // Suscripciones 
   using std::placeholders::_1;
 
   odom_sub_ = node->create_subscription<nav_msgs::msg::Odometry>(
@@ -159,7 +159,6 @@ MyRobotController::command_interface_configuration() const
 controller_interface::InterfaceConfiguration
 MyRobotController::state_interface_configuration() const
 {
-  // Este controlador no necesita leer estados del hardware
   controller_interface::InterfaceConfiguration cfg;
   cfg.type = controller_interface::interface_configuration_type::NONE;
   return cfg;
@@ -190,7 +189,7 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
   const double y  = odom_ptr->pose.pose.position.y;
   const double vx = odom_ptr->twist.twist.linear.x;     // se asume en base_link (ROS suele reportarlo así)
   double r  = odom_ptr->twist.twist.angular.z;
-  r*= yaw_dir_; // Ajusta sentido
+  r*= yaw_dir_; // Ajusta sentido no sirve xd
 
   const double xd = target_ptr->x;
   const double yd = target_ptr->y;
@@ -202,7 +201,7 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
   const double epsi = wrapPi(psid - psi);
   const double rho  = std::hypot(xd - x, yd - y);
 
-  // ---- PWM timing (igual a tuyo)
+  // ---- PWM timing
   pwm_phase_   += pwm_hz_ * dt;
   if (pwm_phase_ >= 1.0) pwm_phase_ -= std::floor(pwm_phase_);
   pwm_elapsed_ += dt;
@@ -212,7 +211,7 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
     pwm_elapsed_ = std::fmod(pwm_elapsed_, pwm_period_);
 
     // 2) Lazos PD: yaw y avance (surge)
-    //    Fwd pide más cuando estás alineado (cos(epsi)); frena con vel. vx
+    //    Fwd pide más cuando está alineado (cos(epsi)); frena con vel. vx
     double Fx   =  kp_rho_ * rho * std::cos(epsi) - kd_vx_ * vx;
     double tauz =  kp_yaw_*kp_yaw_ * epsi - kd_yaw_* kd_yaw_ * r;
 
@@ -300,5 +299,4 @@ void MyRobotController::target_cb_(const geometry_msgs::msg::Point::SharedPtr ms
 
 }  // namespace jaeger_model
 
-// Exporta el plugin
 PLUGINLIB_EXPORT_CLASS(jaeger_model::MyRobotController, controller_interface::ControllerInterface)

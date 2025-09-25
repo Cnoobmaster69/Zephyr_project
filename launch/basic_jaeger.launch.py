@@ -171,7 +171,6 @@ def generate_launch_description():
 # ----------------------------------------------------------------
     # 1) Nodo ros2_control_node (controller_manager)
     # ----------------------------------------------------------------
-    # Asume que tienes un controllers.yaml en config/controllers.yaml
 
     controllers_yaml = os.path.join(
     get_package_share_directory('jaeger_model'),

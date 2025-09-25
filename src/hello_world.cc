@@ -104,8 +104,8 @@ void HelloWorld::PostUpdate(const gz::sim::UpdateInfo& _info, const gz::sim::Ent
   };
 
     // Offsets en frame del link
-  const gz::math::Vector3d r_front (0.0,  0.20, 0.0);
-  const gz::math::Vector3d r_back  (0.0, -0.20, 0.0);
+  const gz::math::Vector3d r_front (0.0,  0.15, 0.0);
+  const gz::math::Vector3d r_back  (0.0, -0.15, 0.0);
   const gz::math::Vector3d nadaxd  (0.0,  0.0,  0.0);
 
   // Empujes locales (±X del dispositivo)
