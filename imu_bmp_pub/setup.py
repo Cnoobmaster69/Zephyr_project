@@ -27,6 +27,7 @@ setup(
             'imu_bmp_node = imu_bmp_pub.node:main',
             'pwm_and_valves = imu_bmp_pub.pwm_and_valves:main',
             'valve_teleop = imu_bmp_pub.valve_teleop:main',
+            'dual_pwm_sweep = imu_bmp_pub.dual_pwm_sweep:main',
         ],
     },
 )

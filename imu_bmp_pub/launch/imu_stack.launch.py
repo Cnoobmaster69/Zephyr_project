@@ -3,6 +3,8 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 import os
 
+#Launch para probar todo sin control :/
+
 def generate_launch_description():
     pkg_share = get_package_share_directory('imu_bmp_pub')
     ekf_yaml = os.path.join(pkg_share, 'config', 'ekf_imu.yaml')
@@ -15,8 +17,6 @@ def generate_launch_description():
         parameters=[{
             'frame_id': 'imu_link',
             'rate_hz': 100.0,
-            # ajusta si tu BMP está en 0x77
-            # 'bmp_addr': 0x77,
         }]
     )
 
@@ -29,11 +29,9 @@ def generate_launch_description():
             'use_mag': False,
             'world_frame': 'enu',
             'publish_tf': False,
-            'gain': 0.1,          # sube si quieres converger más rápido
+            'gain': 0.1,          # para converger más rápido al parecer pero no me funciona xd
             'zeta': 0.0           # compensación de deriva del gyro
         }],
-        # nuestro nodo ya publica en /imu/data_raw, así que no hace falta remapear
-        # si tu tópico fuera distinto, usa remappings=[('imu/data_raw','<tu_topico>')]
     )
 
     ekf = Node(
@@ -44,7 +42,7 @@ def generate_launch_description():
         parameters=[ekf_yaml]
     )
 
-    # IMU -> base_link (identidad; cambia si no están alineados)
+    # IMU -> base_link 
     static_tf = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
@@ -68,5 +66,4 @@ def generate_launch_description():
 )
 
 
-    # return LaunchDescription([imu_node, madgwick, ekf, static_tf, pwm_node])
     return LaunchDescription([pwm_node,imu_node,madgwick,ekf,static_tf])

@@ -187,9 +187,9 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
   // ---- Estados (frame odom) y yaw
   const double x  = odom_ptr->pose.pose.position.x;
   const double y  = odom_ptr->pose.pose.position.y;
-  const double vx = odom_ptr->twist.twist.linear.x;     // se asume en base_link (ROS suele reportarlo así)
+  const double vx = odom_ptr->twist.twist.linear.x;   
   double r  = odom_ptr->twist.twist.angular.z;
-  r*= yaw_dir_; // Ajusta sentido
+  r*= yaw_dir_; // Ajustar sentido pq no c cual ptas son los pines
 
   const double xd = target_ptr->x;
   const double yd = target_ptr->y;
@@ -201,7 +201,7 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
   const double epsi = wrapPi(psid - psi);
   const double rho  = std::hypot(xd - x, yd - y);
 
-  // ---- PWM timing (igual a tuyo)
+  // ---- PWM timing 
   pwm_phase_   += pwm_hz_ * dt;
   if (pwm_phase_ >= 1.0) pwm_phase_ -= std::floor(pwm_phase_);
   pwm_elapsed_ += dt;
@@ -211,12 +211,12 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
     pwm_elapsed_ = std::fmod(pwm_elapsed_, pwm_period_);
 
     // 2) Lazos PD: yaw y avance (surge)
-    //    Fwd pide más cuando estás alineado (cos(epsi)); frena con vel. vx
+    //    Fwd pide más cuando está alineado (cos(epsi)); frena con vel. vx
     double Fx   =  kp_rho_ * rho * std::cos(epsi) - kd_vx_ * vx;
     double tauz =  kp_yaw_*kp_yaw_ * epsi - kd_yaw_* kd_yaw_ * r;
 
     // 3) Saturaciones físicas
-    const double F_tot_max  = u_max_newton_;           // p.ej. 20 N (1+3 o 2+4)
+    const double F_tot_max  = u_max_newton_;           // 20 N JSJAJAJ este mi error 
     const double F_side_max = 0.5 * F_tot_max;         // por lado
     const double tau_max    = half_track_m_ * F_tot_max;
 
@@ -243,7 +243,7 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
     duty_L_fwd_ = dL_fwd; duty_L_rev_ = dL_rev;
     duty_R_fwd_ = dR_fwd; duty_R_rev_ = dR_rev;
 
-    // Parada suave cerca del objetivo
+    // Parada suave cerca del objetivo q no me sirve aaaaaaaaaaaaa
     if (rho < pos_deadband_ && std::abs(epsi) < yaw_deadband_ && std::abs(vx) < vel_deadband_) {
       duty_L_fwd_ = duty_L_rev_ = duty_R_fwd_ = duty_R_rev_ = 0.0;
     }

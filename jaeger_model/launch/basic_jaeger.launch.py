@@ -19,11 +19,10 @@ def generate_launch_description():
         FindPackageShare("jaeger_model"), "config", "controllers.yaml"
     ])
 
-    # ---- robot_description (xacro -> string)
     xacro_path = PathJoinSubstitution([FindPackageShare(description_package), description_xacro])
     robot_description = Command(["xacro ", xacro_path])
 
-    # ---- RSP: publica /robot_description (transient_local) y /tf
+    # ---- RSP: publica /robot_description 
     rsp = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
@@ -33,17 +32,16 @@ def generate_launch_description():
                      "use_sim_time": False}],
     )
 
-    # ---- Controller Manager: NO pasar robot_description por parámetro
+    # ---- Controller Manager
     cm = Node(
         package="controller_manager",
         executable="ros2_control_node",
         name="controller_manager",
         output="screen",
         parameters=[controllers_file, {"use_sim_time": False}],
-        # El CM se suscribe automáticamente a /robot_description en Jazzy
     )
 
-    # ---- Spawners (apuntan explícitamente al CM)
+    # ---- Spawners 
     jsb_spawner = Node(
         package="controller_manager",
         executable="spawner",
