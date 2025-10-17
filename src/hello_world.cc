@@ -104,13 +104,13 @@ void HelloWorld::PostUpdate(const gz::sim::UpdateInfo& _info, const gz::sim::Ent
   };
 
     // Offsets en frame del link
-  const gz::math::Vector3d r_front (0.0,  0.15, 0.0);
-  const gz::math::Vector3d r_back  (0.0, -0.15, 0.0);
+  const gz::math::Vector3d r_front (0.0,  0.20, 0.0);
+  const gz::math::Vector3d r_back  (0.0, -0.20, 0.0);
   const gz::math::Vector3d nadaxd  (0.0,  0.0,  0.0);
 
   // Empujes locales (±X del dispositivo)
-  const gz::math::Vector3d thrust_fwd (+0.25, 0.0, 0.0);
-  const gz::math::Vector3d thrust_back(-0.25, 0.0, 0.0);
+  const gz::math::Vector3d thrust_fwd (+2.25, 0.0, 0.0);
+  const gz::math::Vector3d thrust_back(-2.25, 0.0, 0.0);
   const gz::math::Vector3d no_thrust(0.0,   0.0, 0.0);
 
   if (this->valve_1_==1) {apply_local_force(link_base, const_cast<gz::sim::EntityComponentManager&>(_ecm),

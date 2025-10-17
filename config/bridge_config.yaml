@@ -22,6 +22,11 @@
   ros_type_name: "sensor_msgs/msg/Imu"
   gz_type_name: "gz.msgs.IMU"
   direction: GZ_TO_ROS
+- ros_topic_name: "lidar"
+  gz_topic_name: "/lidar"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
 - ros_topic_name: "odometry/filtered"
   gz_topic_name: "/model/<entity>/odometry_filtered"
   ros_type_name: "nav_msgs/msg/Odometry"

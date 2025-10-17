@@ -12,6 +12,8 @@
         <odom_frame>odom</odom_frame>
         </plugin>
     </gazebo>
+
+
     <gazebo reference="imu_link">
         <plugin filename="gz-sim-imu-system.so" name="gz::sim::systems::Imu">
         </plugin>
@@ -77,6 +79,45 @@
             </imu>
         </sensor>
     </gazebo>
+
+
+
+
+    <gazebo reference="lidar_link">
+      <!-- LiDAR 2D en GPU (puedes cambiar a type='lidar') -->
+      <sensor name="lidar_2d" type="gpu_lidar">
+        <update_rate>20</update_rate>
+        <topic>lidar</topic>  <!-- tópico de Gazebo Transport -->
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>640</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14159</min_angle>
+              <max_angle> 3.14159</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>0.01</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.08</min>
+            <max>5.0</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <always_on>1</always_on>
+        <visualize>true</visualize>
+      </sensor>
+    </gazebo>
   
     <!-- <gazebo>
         <plugin
@@ -95,7 +136,7 @@
       
         <hardware>
           <plugin>jaeger_model/MyRobotHardware</plugin>
-          <parameter name="update_rate" value="50"/>
+          <parameter name="update_rate" value="100"/>
         </hardware>
 
         

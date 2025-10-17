@@ -216,8 +216,8 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
     double tauz =  kp_yaw_*kp_yaw_ * epsi - kd_yaw_* kd_yaw_ * r;
 
     // 3) Saturaciones físicas
-    const double F_tot_max  = u_max_newton_;           // p.ej. 20 N (1+3 o 2+4)
-    const double F_side_max = 0.5 * F_tot_max;         // por lado
+    const double F_tot_max  = u_max_newton_;           
+    const double F_side_max = 0.5 * F_tot_max;         
     const double tau_max    = half_track_m_ * F_tot_max;
 
     Fx   = std::clamp(Fx,   -F_tot_max, F_tot_max);

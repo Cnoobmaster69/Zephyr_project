@@ -26,12 +26,12 @@ my_robot_controller:
     
     # kp_rho: 3.0
     # kd_vx: 7.0
-    kp_rho: 3.0
-    kd_vx: 7.0
+    kp_rho: 6.0
+    kd_vx: 9.0
     # kp_yaw: 0.05
     # kd_yaw: 0.7
-    kp_yaw: 0.3
-    kd_yaw: 0.7
+    kp_yaw: 1.0
+    kd_yaw: 1.0
     pos_deadband: 0.1
     yaw_deadband: 0.09
     vel_deadband: 0.01
