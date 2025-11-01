@@ -25,15 +25,15 @@ my_robot_controller:
     
     # kp_rho: 3.0
     # kd_vx: 7.0
-    kp_rho: 3.0
-    kd_vx: 7.0
+    kp_rho: 3.8
+    kd_vx: 7.5
     # kp_yaw: 0.05
     # kd_yaw: 0.7
     kp_yaw: 0.3
-    kd_yaw: 0.7
-    pos_deadband: 0.1
+    kd_yaw: 0.75
+    pos_deadband: 0.05
     yaw_deadband: 0.09
-    vel_deadband: 0.01
-    min_cos_for_surge: 0.0
-    pwm_hz: 12.0
+    vel_deadband: 0.1
+    min_cos_for_surge: 0.5
+    pwm_hz: 8.0
     duty_slew_rate: 0.20

@@ -187,14 +187,46 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
   // ---- Estados (frame odom) y yaw
   const double x  = odom_ptr->pose.pose.position.x;
   const double y  = odom_ptr->pose.pose.position.y;
-  const double vx = odom_ptr->twist.twist.linear.x;   
-  double r  = odom_ptr->twist.twist.angular.z;
+
+  double psi = tf2::getYaw(odom_ptr->pose.pose.orientation);  // yaw ROS (CCW+).
+
+  // Guardas anti-paquete-nulo (opcional pero útil)
+  auto &q = odom_ptr->pose.pose.orientation;
+  const bool quat_ident = (std::abs(q.w) > 0.999 && std::abs(q.x)<1e-6 && std::abs(q.y)<1e-6 && std::abs(q.z)<1e-6);
+  const bool pose_zero  = (std::abs(x)<1e-6 && std::abs(y)<1e-6);
+  const bool invalid_sample = quat_ident && pose_zero;
+
+  // Estima por diferencias: solo si tenemos previo y muestra válida y dt>0
+  double vx = vx_est_, r = r_est_;
+  if (!invalid_sample && have_prev_ && dt > 1e-6) {
+  const double dx = x - prev_x_;
+  const double dy = y - prev_y_;
+  // wrap de delta yaw a [-pi,pi] para derivar correctamente
+  const double dpsi = std::atan2(std::sin(psi - prev_psi_), std::cos(psi - prev_psi_)); 
+
+  // velocidad en eje x del cuerpo (proyección de la velocidad espacial) 
+  const double vx_inst = ( std::cos(psi)*dx + std::sin(psi)*dy ) / dt;
+  const double r_inst  = dpsi / dt;
+
+  // EMA para suavizar (evita dientes de sierra) 
+  vx_est_ = (1.0 - ema_alpha_) * vx_est_ + ema_alpha_ * vx_inst;
+  r_est_  = (1.0 - ema_alpha_) * r_est_  + ema_alpha_ * r_inst;
+
+  vx = vx_est_;
+  r  = r_est_;
+  }
+
+    // Actualiza memoria (si la muestra no es inválida)
+  if (!invalid_sample) {
+    prev_x_ = x; prev_y_ = y; prev_psi_ = psi; have_prev_ = true;
+  }
+  // const double vx = odom_ptr->twist.twist.linear.x;
+  // double r  = odom_ptr->twist.twist.angular.z;
   r*= yaw_dir_; // Ajustar sentido pq no c cual ptas son los pines
 
   const double xd = target_ptr->x;
   const double yd = target_ptr->y;
 
-  double psi = tf2::getYaw(odom_ptr->pose.pose.orientation);
   psi*= yaw_dir_; // Ajusta sentido
   const double psid = std::atan2(yd - y, xd - x);
   auto wrapPi = [](double a){ while (a>M_PI) a-=2*M_PI; while (a<-M_PI) a+=2*M_PI; return a; };
@@ -213,7 +245,15 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
     // 2) Lazos PD: yaw y avance (surge)
     //    Fwd pide más cuando está alineado (cos(epsi)); frena con vel. vx
     double Fx   =  kp_rho_ * rho * std::cos(epsi) - kd_vx_ * vx;
-    double tauz =  kp_yaw_*kp_yaw_ * epsi - kd_yaw_* kd_yaw_ * r;
+    double tauz =  kp_yaw_ * epsi - kd_yaw_ * r;
+
+    // Opcional: reducir Fx si desalineado
+    if (min_cos_for_surge_ > 0.0) {
+      const double c = std::cos(epsi);
+      if (c < min_cos_for_surge_) {
+        Fx *= (c / (min_cos_for_surge_));
+      }
+    }
 
     // 3) Saturaciones físicas
     const double F_tot_max  = u_max_newton_;           // 20 N JSJAJAJ este mi error 
@@ -222,6 +262,9 @@ MyRobotController::update(const rclcpp::Time&, const rclcpp::Duration& period)
 
     Fx   = std::clamp(Fx,   -F_tot_max, F_tot_max);
     tauz = std::clamp(tauz, -tau_max,   tau_max);
+    
+    if (rho < yaw_deadband_) tauz = 0.0;
+    if (std::abs(epsi) < pos_deadband_) Fx = 0.0;
 
     // 4) Mezcla a lados (diferencial)
     double FL = 0.5 * (Fx + (tauz / std::max(1e-6, half_track_m_)));

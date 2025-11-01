@@ -18,9 +18,32 @@ def generate_launch_description():
     controllers_file = PathJoinSubstitution([
         FindPackageShare("jaeger_model"), "config", "controllers.yaml"
     ])
+    ekf_file = PathJoinSubstitution([
+        FindPackageShare("imu_bmp_pub"), "config", "ekf_imu.yaml"
+    ])
+
 
     xacro_path = PathJoinSubstitution([FindPackageShare(description_package), description_xacro])
     robot_description = Command(["xacro ", xacro_path])
+
+    motores= Node(
+        package='imu_bmp_pub',
+        executable='dual_pwm_sweep',
+        name='dual_pwm_sweep',
+        output='screen',
+    )
+
+    
+    ekf = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[
+            ekf_file,
+            {'use_sim_time': False}
+        ],
+    )
 
     # ---- RSP: publica /robot_description 
     rsp = Node(
@@ -55,6 +78,12 @@ def generate_launch_description():
         output="screen",
     )
 
+    delay_rsp = RegisterEventHandler(
+    event_handler=OnProcessStart(
+        target_action=motores,
+        on_start=[rsp]
+    ))
+
     delay_ros2_control_node = RegisterEventHandler(
     event_handler=OnProcessStart(
         target_action=rsp,
@@ -77,9 +106,12 @@ def generate_launch_description():
       
 
     return LaunchDescription([
-        # rsp,
-        # delay_ros2_control_node,
-        cm,
+        #ekf,
+        motores,
+        rsp,
+        #delay_rsp,
+        delay_ros2_control_node,
+        # cm,
         delay_jsb,
         delay_controller,
     ])

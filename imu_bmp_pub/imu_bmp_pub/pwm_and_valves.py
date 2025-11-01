@@ -19,7 +19,7 @@ class PwmAndValves(Node):
         # Barrido global para pwm_pins
         self.declare_parameter('pwm_sweep_on_start', True)
         self.declare_parameter('pwm_sweep_min_pct', 4.0)
-        self.declare_parameter('pwm_sweep_max_pct', 6.1)
+        self.declare_parameter('pwm_sweep_max_pct', 6.8)
         self.declare_parameter('pwm_sweep_step_pct', 0.2)
         self.declare_parameter('pwm_sweep_duration_s', 10.0)
 

@@ -28,14 +28,14 @@ class DualPwmSweep(Node):
         # Barrido pin 12
         self.declare_parameter('p12_sweep_on_start', True)
         self.declare_parameter('p12_sweep_min_pct', 4.0)
-        self.declare_parameter('p12_sweep_max_pct', 6.1)
+        self.declare_parameter('p12_sweep_max_pct', 7.0)
         self.declare_parameter('p12_sweep_step_pct', 0.1)
         self.declare_parameter('p12_sweep_duration_s', 5.0)
 
         # Barrido pin 13
         self.declare_parameter('p13_sweep_on_start', True)
         self.declare_parameter('p13_sweep_min_pct', 4.0)
-        self.declare_parameter('p13_sweep_max_pct', 6.3)
+        self.declare_parameter('p13_sweep_max_pct', 6.8)
         self.declare_parameter('p13_sweep_step_pct', 0.1)
         self.declare_parameter('p13_sweep_duration_s', 5.0)
 
