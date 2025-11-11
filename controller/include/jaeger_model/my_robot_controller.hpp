@@ -87,12 +87,12 @@ double u_max_newton_{0.5};   // [N] empuje total máx (2 válvulas en paralelo)
 // Límite de par máximo implícito: tau_max = b * u_max
 
 // --- Bandas muertas / gating ---
-double pos_deadband_{0.1};       // [m] cerca del objetivo, apaga
+double pos_deadband_{0.05};       // [m] cerca del objetivo, apaga
 double yaw_deadband_{5.0 * M_PI/180.0}; // [rad] ~2°
 double vel_deadband_{0.03};       // [m/s] evita creep
 
 // Opcional: reducir avance si hay gran desalineación (0 desactiva)
-double min_cos_for_surge_{0.0};   // [0..1], p.ej. 0.2 si quieres gatear surge
+double min_cos_for_surge_{0.5};   // [0..1], p.ej. 0.2 si quieres gatear surge
 
 // --- PWM (si no los tienes ya) ---
 double pwm_hz_{12.0};             // [Hz] frecuencia del PWM “soft”
@@ -116,8 +116,22 @@ inline double wrapPi(double a) const {
   return a;
 }
 
-double yaw_rate_deadband_{0.05};   // [rad/s]
+double yaw_rate_deadband_{0.55};   // [rad/s]
 bool   stop_require_position_{true}; // en pruebas de yaw: false
+
+// Estimadores por diferencias finitas
+bool have_prev_{false};
+double prev_x_{0.0}, prev_y_{0.0}, prev_psi_{0.0};
+double vx_est_{0.0}, r_est_{0.0};      // estimados suavizados
+double ema_alpha_{0.3};                // 0..1 (más alto = más reactivo)
+
+// enum class Phase { ORIENT, SETTLE, ADVANCE, STOP };
+// Phase phase_{Phase::ORIENT};
+// double yaw_db_realign_{0.15};   // rad: umbral para volver a ORIENT si se desvía
+// double reorient_dist_{0.20};    // m: re-orientar cada esta distancia recorrida
+// double dist_accum_{0.0};
+// double last_x_{0.0}, last_y_{0.0};
+// double duty_min_on_{10.0};      // <6% => trata como 0 para evitar parpadeo
 
 //     // Estado para el eje X
 // enum class XMode { Idle, Forward, Backward };

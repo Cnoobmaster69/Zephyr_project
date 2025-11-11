@@ -1,0 +1,1 @@
+gz-sim8;ros_gz_bridge;ros_gz_sim;rclcpp;std_msgs;nav_msgs;geometry_msgs;lifecycle_msgs;rcl_lifecycle;rcl_interfaces;realtime_tools;ros2launch;rviz2;xacro;hardware_interface;pluginlib;controller_interface;controller_manager;joint_state_broadcaster;control_msgs;tf2;tf2_geometry_msgs;ament_lint_auto;ament_lint_common

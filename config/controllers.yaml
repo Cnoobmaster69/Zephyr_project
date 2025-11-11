@@ -30,13 +30,13 @@ my_robot_controller:
     kd_vx: 9.0
     # kp_yaw: 0.05
     # kd_yaw: 0.7
-    kp_yaw: 1.0
-    kd_yaw: 1.0
-    pos_deadband: 0.1
+    kp_yaw: 0.4
+    kd_yaw: 1.4
+    pos_deadband: 0.05
     yaw_deadband: 0.09
-    vel_deadband: 0.01
-    min_cos_for_surge: 0.0
-    pwm_hz: 12.0
+    vel_deadband: 0.05
+    min_cos_for_surge: 0.3
+    pwm_hz: 8.0
     duty_slew_rate: 0.20
 
     # odom_topic: "odometry/filtered"       

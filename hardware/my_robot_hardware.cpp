@@ -135,7 +135,7 @@ hardware_interface::return_type MyRobotHardware::write(
         s += gpio_cmd_index_[i].first + "/" + gpio_cmd_index_[i].second + "="
           + std::to_string(gpio_cmd_storage_[i]) + (i + 1 < gpio_cmd_storage_.size() ? ", " : "");
       }
-      RCLCPP_INFO(rclcpp::get_logger("MyRobotHardware"), "%s", s.c_str());
+      // RCLCPP_INFO(rclcpp::get_logger("MyRobotHardware"), "%s", s.c_str());
     }
   }
   return hardware_interface::return_type::OK;
