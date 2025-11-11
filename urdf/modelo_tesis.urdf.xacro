@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<robot name="jaeger" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- =========================
+       Rutas y escala
+       ========================= -->
+  <!-- Usa el paquete donde realmente instalas los meshes -->
+  <xacro:property name="mesh_root" value="package://jaeger_model/meshes"/>
+  <xacro:property name="boquilla_mesh" value="boquilla_salida.STL"/>
+  <xacro:property name="base_mesh"     value="ensamblaje_base.stl"/>
+  <xacro:property name="scale_m"       value="0.001 0.001 0.001"/>
+
+  <!-- =========================
+       Constantes geométricas
+       ========================= -->
+  <xacro:property name="pi_2"       value="1.57079632679"/>   <!-- +90° -->
+  <xacro:property name="neg_pi_2"   value="-1.57079632679"/>  <!-- -90° -->
+  <xacro:property name="base_drop_z" value="-0.20"/>
+
+  <!-- Para la colisión aproximada de la base (hexágono) -->
+  <xacro:property name="hex_side"       value="0.16"/>          <!-- 16 cm por cara -->
+  <xacro:property name="hex_radius_eq"  value="0.14550267896"/> <!-- radio equivalente -->
+  <xacro:property name="hex_height"     value="0.10"/>
+
+  <!-- Un radio cómodo para posicionar boquillas alrededor -->
+  <xacro:property name="nozzle_r" value="0.12"/>
+
+  <material name="sky_blue">
+    <color rgba="0.4 0.6 1.0 1.0"/>
+  </material>
+  <material name="black">
+    <color rgba="0.7 0.7 1.0 1.0"/>
+  </material>
+
+  <!-- =========================
+       Base del robot
+       ========================= -->
+  <link name="base_link"/>
+
+  <link name="main_base">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${mesh_root}/${base_mesh}" scale="${scale_m}"/>
+      </geometry>
+      <material name="sky_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- Cilindro como colisión aproximada (simple/robusto) -->
+      <geometry>
+        <mesh filename="${mesh_root}/${base_mesh}" scale="${scale_m}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.21 0.1 0.98"/>
+      <mass value="3"/>
+      <inertia ixx="0.0214" ixy="0.0" ixz="0.0"
+               iyy="0.0277" iyz="0.0" izz="0.0308"/>
+    </inertial>
+  </link>
+
+  <joint name="main_base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="main_base"/>
+    <!-- Baja la base y gírala +90° en X -->
+    <origin xyz="0 0 ${base_drop_z}" rpy="${pi_2} 0 0"/>
+  </joint>
+
+  <!-- =========================
+       IMU fija (sin plugin Gazebo aquí)
+       ========================= -->
+  <link name="imu_link"/>
+  <joint name="imu_mount" type="fixed">
+    <parent link="main_base"/>
+    <child  link="imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- =========================
+       Macro de boquilla
+       ========================= -->
+  <xacro:macro name="boquilla" params="name parent xyz:='0 0 0' rpy:='0 0 0'">
+    <link name="${name}">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_root}/${boquilla_mesh}" scale="${scale_m}"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_root}/${boquilla_mesh}" scale="${scale_m}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0"/>
+        <mass value="0.0384586"/>
+        <inertia ixx="9.0e-7" ixy="0.0" ixz="0.0"
+                 iyy="7.5e-7" iyz="0.0" izz="7.5e-7"/>
+      </inertial>
+    </link>
+
+    <joint name="${name}_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child  link="${name}"/>
+      <origin xyz="${xyz}" rpy="${rpy}"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- =========================
+       4 boquillas (dos a +90° X, dos a −90° X)
+       ========================= -->
+  <!-- A lo largo de X -->
+  <xacro:boquilla name="boquilla_1" parent="main_base" xyz="0.07357 0.1175 1.0208"  rpy="0 0 0"/>
+  <xacro:boquilla name="boquilla_2" parent="main_base" xyz="0.33459 0.1175 1.0208" rpy="0 0 0"/>
+
+  <!-- A lo largo de Y -->
+  <xacro:boquilla name="boquilla_3" parent="main_base" xyz="0.07357 0.1175  0.872"  rpy="0 0 0"/>
+  <xacro:boquilla name="boquilla_4" parent="main_base" xyz="0.33459 0.1175  0.872" rpy="0 0 0"/>
+
+</robot>
+

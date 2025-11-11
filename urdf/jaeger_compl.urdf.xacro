@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="jaeger">
-    <xacro:include filename="$(find jaeger_model)/urdf/jaeger_model.urdf"/>
+    
+    <xacro:property name="pkg_share" value="$(find jaeger_model)"/>
 
-    <!-- OdometryPublisher being used instead of Diff Drive's odometry -->
+  <!-- Incluye el modelo usando la propiedad -->
+    <xacro:include filename="${pkg_share}/urdf/modelo_tesis.urdf.xacro"/>
+
+
+    <!-- OdometryPublisher being used instead of Diff Drive's odometry <xacro:include filename="$(find jaeger_model)/urdf/modelo_tesis.urdf.xacro"/>-->
     <gazebo>
         <plugin
         filename="gz-sim-odometry-publisher-system"
