@@ -1,4 +1,5 @@
 import os
+import xacro
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import (DeclareLaunchArgument, SetEnvironmentVariable,
@@ -19,7 +20,7 @@ ARGUMENTS = [
     DeclareLaunchArgument('ros_bridge', default_value='True', description='Run ROS bridge node.'),
     DeclareLaunchArgument('initial_pose_x', default_value='0.0', description='Initial x pose of rasbot in the simulation.'),
     DeclareLaunchArgument('initial_pose_y', default_value='0.0', description='Initial y pose of rasbot in the simulation.'),
-    DeclareLaunchArgument('initial_pose_z', default_value='0.1', description='Initial z pose of rasbot in the simulation.'),
+    DeclareLaunchArgument('initial_pose_z', default_value='0.4', description='Initial z pose of rasbot in the simulation.'),
     DeclareLaunchArgument('initial_pose_yaw', default_value='0.0', description='Initial yaw pose of rasbot in the simulation.'),
     DeclareLaunchArgument('robot_description_topic', default_value='robot_description', description='Robot description topic.'),
     DeclareLaunchArgument('rsp_frequency', default_value='30.0', description='Robot State Publisher frequency.'),
@@ -28,17 +29,15 @@ ARGUMENTS = [
     DeclareLaunchArgument('robot_description_topic', default_value='robot_description', description='Robot description topic.'),
 ]
 
+
 def get_robot_description():
-    pkg_rasbot_gazebo = get_package_share_directory('jaeger_model')
-    pkg_rasbot_description = get_package_share_directory('jaeger_model')
-    robot_description_path = os.path.join(pkg_rasbot_gazebo, 'urdf', 'jaeger_compl.urdf.xacro')
-    mappings = {}
-    robot_description_config = process_file(robot_description_path, mappings=mappings)
-    robot_desc = robot_description_config.toprettyxml(indent='  ')
-    robot_desc = robot_desc.replace(
-        'package://rasbot_description/', f'file://{pkg_rasbot_description}/'
-    )
-    return robot_desc
+    pkg_share = get_package_share_directory('jaeger_model')
+    xacro_path = os.path.join(pkg_share, 'urdf', 'jaeger_compl.urdf.xacro')  # <-- sin la "r"
+    doc = xacro.process_file(xacro_path, mappings={})
+    urdf_xml = doc.toxml()
+    urdf_xml = urdf_xml.replace('package://jaeger_model/', f'file://{pkg_share}/')
+    return urdf_xml
+
 
 def generate_launch_description():
     ld = LaunchDescription(ARGUMENTS)

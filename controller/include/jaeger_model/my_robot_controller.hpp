@@ -75,21 +75,21 @@ private:
   // double vel_deadband_{0.01};   // opcional para evitar “creep”
 
 // --- Ganancias (a tunear) ---
-double kp_rho_{9.0};     // [N/m]   empuje vs distancia al objetivo
-double kd_vx_{12.0};      // [N·s/m] freno por velocidad en eje x del robot
-double kp_yaw_{0.0};     // [N·m/rad] par de guiñada vs error de yaw
-double kd_yaw_{0.0};     // [N·m·s/rad] freno por velocidad angular (r)
+double kp_rho_{3.8};     // [N/m]   empuje vs distancia al objetivo
+double kd_vx_{7.5};      // [N·s/m] freno por velocidad en eje x del robot
+double kp_yaw_{0.3};     // [N·m/rad] par de guiñada vs error de yaw
+double kd_yaw_{0.75};     // [N·m·s/rad] freno por velocidad angular (r)
 
 // --- Geometría / límites físicos ---
-double half_track_m_{0.20};   // [m] semidistancia lateral (brazo b)
-double u_max_newton_{0.5};   // [N] empuje total máx (2 válvulas en paralelo)
+double half_track_m_{0.17};   // [m] semidistancia lateral (brazo b)
+double u_max_newton_{14};   // [N] empuje total máx (2 válvulas en paralelo)
                               // => por lado: F_side_max = u_max/2
 // Límite de par máximo implícito: tau_max = b * u_max
 
 // --- Bandas muertas / gating ---
 double pos_deadband_{0.05};       // [m] cerca del objetivo, apaga
 double yaw_deadband_{5.0 * M_PI/180.0}; // [rad] ~2°
-double vel_deadband_{0.03};       // [m/s] evita creep
+double vel_deadband_{0.1};       // [m/s] evita creep
 
 // Opcional: reducir avance si hay gran desalineación (0 desactiva)
 double min_cos_for_surge_{0.5};   // [0..1], p.ej. 0.2 si quieres gatear surge

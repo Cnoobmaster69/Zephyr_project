@@ -223,8 +223,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>0.005</mu>
-                      <mu2>0</mu2>
+                      <mu>0.0034</mu>
+                      <mu2>0.0034</mu2>
                     </ode>
                   </friction>
                 </surface>
@@ -263,7 +263,7 @@
             
             <!-- Propiedades inerciales: masa e inercia manual -->
             <inertial>
-              <mass>6.0</mass>
+              <mass>100.0</mass>
               <inertia>
                 <ixx>1.0</ixx>
                 <ixy>0.0</ixy>

@@ -79,5 +79,6 @@
     ],
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true
 }

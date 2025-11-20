@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="jaeger">
-    <xacro:include filename="$(find jaeger_model)/urdf/jaeger_model.urdf"/>
+    
+    <xacro:property name="pkg_share" value="$(find jaeger_model)"/>
 
-    <!-- OdometryPublisher being used instead of Diff Drive's odometry -->
+  <!-- Incluye el modelo usando la propiedad -->
+    <xacro:include filename="${pkg_share}/urdf/Ensamblaje_base2.urdf"/>
+
+
+    <!-- OdometryPublisher being used instead of Diff Drive's odometry <xacro:include filename="$(find jaeger_model)/urdf/modelo_tesis.urdf.xacro"/>-->
     <gazebo>
         <plugin
         filename="gz-sim-odometry-publisher-system"
@@ -12,8 +17,6 @@
         <odom_frame>odom</odom_frame>
         </plugin>
     </gazebo>
-
-
     <gazebo reference="imu_link">
         <plugin filename="gz-sim-imu-system.so" name="gz::sim::systems::Imu">
         </plugin>
@@ -80,9 +83,6 @@
         </sensor>
     </gazebo>
 
-
-
-
     <gazebo reference="lidar_link">
       <!-- LiDAR 2D en GPU (puedes cambiar a type='lidar') -->
       <sensor name="lidar_2d" type="gpu_lidar">
@@ -118,6 +118,11 @@
         <visualize>true</visualize>
       </sensor>
     </gazebo>
+
+    <gazebo reference="base_link">
+      <mu1>0.0034</mu1>
+      <mu2>0.0034</mu2>
+    </gazebo>
   
     <!-- <gazebo>
         <plugin
@@ -136,7 +141,7 @@
       
         <hardware>
           <plugin>jaeger_model/MyRobotHardware</plugin>
-          <parameter name="update_rate" value="100"/>
+          <parameter name="update_rate" value="50"/>
         </hardware>
 
         

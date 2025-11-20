@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="jaeger">
+  <link name ="base_link">
+  </link>
+  <link
+    name="main_robot">
+    <inertial>
+      <origin
+        xyz="0.048754 0.066005 0.028922"
+        rpy="0 0 0" />
+      <mass
+        value="3.8" />
+      <inertia
+        ixx="0.0084412"
+        ixy="1.6579E-09"
+        ixz="3.3032E-05"
+        iyy="0.015573"
+        iyz="4.1638E-07"
+        izz="0.0082565" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/main_robot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/main_robot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="main_robot_joint"
+    type="fixed">
+    <origin
+      xyz="-0.025 -0.05 -0.06"
+      rpy="1.5708 0 1.7045" />
+    <parent
+      link="base_link" />
+    <child
+      link="main_robot" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="boquilla_salida1">
+    <inertial>
+      <origin
+        xyz="-4.316E-15 -1.0887E-14 0.025048"
+        rpy="0 0 0" />
+      <mass
+        value="0.038459" />
+      <inertia
+        ixx="7.7504E-06"
+        ixy="0"
+        ixz="-9.948E-19"
+        iyy="7.7504E-06"
+        iyz="-9.3346E-19"
+        izz="9.0053E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/boquilla_salida1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/boquilla_salida1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="boquilla_salida1_joint"
+    type="fixed">
+    <origin
+      xyz="0.171093059353512 0.0607847355546553 0.0946525534468481"
+      rpy="-0.0979918017243462 -0.0911099940367164 0.824063665493995" />
+    <parent
+      link="main_robot" />
+    <child
+      link="boquilla_salida1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="boquilla_salida2">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 -2.2204E-16 0.025048"
+        rpy="0 0 0" />
+      <mass
+        value="0.038459" />
+      <inertia
+        ixx="7.7504E-06"
+        ixy="4.2352E-22"
+        ixz="-1.8649E-20"
+        iyy="7.7504E-06"
+        iyz="6.242E-20"
+        izz="9.0053E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/boquilla_salida2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/boquilla_salida2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="boquilla_salida2_joint"
+    type="fixed">
+    <origin
+      xyz="-0.085959678955371 0.06078473555443 0.0600772353527931"
+      rpy="0.048797691705924 -0.124530846783036 -0.374612420809702" />
+    <parent
+      link="main_robot" />
+    <child
+      link="boquilla_salida2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="boquilla_salida3">
+    <inertial>
+      <origin
+        xyz="3.1641E-15 -1.142E-14 0.025048"
+        rpy="0 0 0" />
+      <mass
+        value="0.038459" />
+      <inertia
+        ixx="7.7504E-06"
+        ixy="-6.9823E-32"
+        ixz="1.0482E-18"
+        iyy="7.7504E-06"
+        iyz="-3.0568E-20"
+        izz="9.0053E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/boquilla_salida3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/boquilla_salida3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="boquilla_salida3_joint"
+    type="fixed">
+    <origin
+      xyz="0.184157069264961 0.0607847355546151 -0.00247278642402893"
+      rpy="3.04172295326668 -0.0890463869916974 0.844938550191657" />
+    <parent
+      link="main_robot" />
+    <child
+      link="boquilla_salida3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="boquilla_salida4">
+    <inertial>
+      <origin
+        xyz="1.4572E-15 -2.1927E-15 0.025048"
+        rpy="0 0 0" />
+      <mass
+        value="0.038459" />
+      <inertia
+        ixx="7.7504E-06"
+        ixy="0"
+        ixz="-1.7332E-20"
+        iyy="7.7504E-06"
+        iyz="9.4652E-21"
+        izz="9.0053E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/boquilla_salida4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="$(find jaeger_model)/meshes/boquilla_salida4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="boquilla_salida4_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0728956690439297 0.0607847355544255 -0.0370481045180852"
+      rpy="3.04678014310239 -0.0944147939683517 0.789744357084699" />
+    <parent
+      link="main_robot" />
+    <child
+      link="boquilla_salida4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+  <link name="x_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  
+  <joint name="x_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="x_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="y_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <joint name="y_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="y_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <!-- <link name="lidar_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.005" radius="0.01"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.005" radius="0.01"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </inertial>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0 0 0.25" rpy="0 0 0"/>
+  </joint> -->
+
+</robot>
